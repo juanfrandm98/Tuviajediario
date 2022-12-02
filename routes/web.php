@@ -18,6 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('testAlexa', function() {
-    //return response('PROBANDO', 200)->header('Content-Type', 'text/plain');
-    return view('welcome');
+    return response('PROBANDO', 200)->header('Content-Type', 'text/plain');
 });
