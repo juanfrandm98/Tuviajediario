@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/testAlexa', function() {
+    return response('PROBANDO', 200)->header('Content-Type', 'text/plain');
+});
