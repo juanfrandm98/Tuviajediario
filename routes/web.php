@@ -18,6 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/testAlexa', function() {
-	return view('welcome');
-    //return response('PROBANDO', 200)->header('Content-Type', 'text/plain');
+	return response('PROBANDO', 200)->header('Content-Type', 'text/plain');
 });
+
+Route::get('phpmyinfo', function () {
+    phpinfo(); 
+})->name('phpmyinfo');
