@@ -47,7 +47,8 @@ class JuegoController extends Controller
             $jsonTipo = json_decode($jsonParams, true);
             $tipo = $jsonTipo['tipo'];
 
-            $juego = Juego::where('tipo', $tipo)->first();
+            //$juego = Juego::where('tipo', $tipo)->first();
+            $juego = Juego::inRandomOrder()->first();
 
             if($juego) {
                 $statusCode = 200;
