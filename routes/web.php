@@ -26,7 +26,7 @@ Route::get('/testAlexa', function() {
 /**
  * Rutas para los Juegos
  */
-Route::get('getRandomJuego', [JuegoController::class], 'getRandomJuego');
+Route::get('getRandomJuego', [JuegoController::class, 'getRandomJuego']);
 /**
  *
  */
