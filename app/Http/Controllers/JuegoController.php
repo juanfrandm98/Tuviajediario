@@ -40,7 +40,7 @@ class JuegoController extends Controller
     public function getRandomJuego(Request $request)
     {
         $jsonParams = $request->get('json');
-        $message = 'Error en los datos enviados.';
+        $message = 'Debe enviar como parámetro el tipo de juego que desea recibir.';
         $statusCode = 409;
 
         if($jsonParams) {
@@ -54,7 +54,7 @@ class JuegoController extends Controller
 
                 return response()->json([
                     'nombre' => $juego->nombre,
-                    'descripcion' => $juego->descripcion
+                    'explicacion' => $juego->explicacion
                 ], $statusCode);
             } else {
                 $message = 'No se ha encontrado ningún juego de tipo ' . $tipo . '.';
