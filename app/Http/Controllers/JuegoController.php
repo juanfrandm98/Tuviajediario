@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Juego;
 
 class JuegoController extends Controller
 {
@@ -22,7 +23,15 @@ class JuegoController extends Controller
                 'tipo' => $jsonJuego['tipo']
             );
 
-            //$newDBEntrance = new
+            $newDBEntrance = new Juego($newJuego);
+            $newDBEntrance->save();
+
+            if($juego = Juego::where('nombre', $jsonJuego['nombre'])->where('explicacion', $jsonJuego['explicacion'])->first()) {
+                $message = 'Juego introducido correctamente (ID: ' . $juego->id . ').';
+                $statusCode = 200;
+            } else {
+                $message = 'Error al introducir los datos en la BD.';
+            }
         }
 
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
