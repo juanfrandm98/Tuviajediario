@@ -39,7 +39,29 @@ class JuegoController extends Controller
 
     public function getRandomJuego(Request $request)
     {
-        return response('PROBANDO 2.0', 200)->header('Content-Type', 'text/plain');
+        $jsonParams = $request->get('json');
+        $message = 'Error en los datos enviados.';
+        $statusCode = 409;
+
+        if($jsonParams) {
+            $jsonTipo = json_decode($jsonParams, true);
+            $tipo = $jsonTipo['tipo'];
+
+            $juego = Juego::where('tipo', $tipo)->random();
+
+            if($juego) {
+                $statusCode = 200;
+
+                return response()->json([
+                    'nombre' => $juego->nombre,
+                    'descripcion' => $juego->descripcion
+                ], $statusCode);
+            } else {
+                $message = 'No se ha encontrado ningún juego de tipo ' . $tipo . '.';
+            }
+        }
+
+        return response($message, $statusCode)->header('Content-Type', 'text/plain');
     }
 
 }
