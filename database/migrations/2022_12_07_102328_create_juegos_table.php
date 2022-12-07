@@ -17,10 +17,10 @@ class CreateJuegosTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nombre');
-            $table->string('explicacion');
+            $table->string('explicacion', 500);
             $table->enum('tipo', ['general', 'especifico']);
-            $table->integer('cota_inferior')->nullable;
-            $table->string('area_cognitiva')->nullable;
+            $table->integer('cota_inferior')->default(-1);
+            $table->string('area_cognitiva')->default('Por determinar');
         });
     }
 
