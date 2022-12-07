@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\JuegoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +22,14 @@ Route::get('/', function () {
 Route::get('/testAlexa', function() {
 	return response('PROBANDO', 200)->header('Content-Type', 'text/plain');
 });
+
+/**
+ * Rutas para los Juegos
+ */
+Route::get('getRandomJuego', [JuegoController::class], 'getRandomJuego');
+/**
+ *
+ */
 
 Route::get('phpmyinfo', function () {
     phpinfo(); 
