@@ -16,6 +16,11 @@ class CreateJuegosTable extends Migration
         Schema::create('juegos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('explicacion');
+            $table->enum('tipo', ['general', 'especifico']);
+            $table->integer('cota_inferior')->nullable;
+            $table->string('area_cognitiva')->nullable;
         });
     }
 
