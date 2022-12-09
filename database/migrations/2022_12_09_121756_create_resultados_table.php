@@ -16,6 +16,12 @@ class CreateResultadosTable extends Migration
         Schema::create('resultados', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('juegoID');
+            $table->string('jugador');
+            $table->dateTime('fecha');
+            $table->integer('puntos');
+            $table->integer('segundos');
+            $table->boolean('aviso')->default(false);
         });
     }
 
