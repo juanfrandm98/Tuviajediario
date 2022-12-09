@@ -17,6 +17,7 @@ class Juego extends Model
     protected $fillable = [
         'id',
         'nombre',
+        'codigo',
         'explicacion',
         'tipo',
         'cota_inferior',

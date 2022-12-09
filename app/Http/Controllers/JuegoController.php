@@ -19,6 +19,7 @@ class JuegoController extends Controller
 
             $newJuego = array(
                 'nombre' => $jsonJuego['nombre'],
+                'codigo' => $jsonJuego['codigo'],
                 'explicacion' => $jsonJuego['explicacion'],
                 'tipo' => $jsonJuego['tipo']
             );
@@ -52,6 +53,7 @@ class JuegoController extends Controller
 
                 return response()->json([
                     'nombre' => $juego->nombre,
+                    'codigo' => $juego->codigo,
                     'explicacion' => $juego->explicacion
                 ], $statusCode);
             } else {
