@@ -14,7 +14,7 @@ class UpdateJuegosTable extends Migration
     public function up()
     {
         Schema::table('juegos', function (Blueprint $table) {
-            $table->string('codigo')->unique();
+            $table->string('id')->change();
         });
     }
 
