@@ -16,7 +16,7 @@ class ResultadoController extends Controller
         if($jsonParams) {
             $jsonResult = json_decode($jsonParams, true);
 
-            if($juego = Juego::where('codigo', $jsonResult['juego'])) {
+            if($juego = Juego::where('codigo', $jsonResult['juego'])->first()) {
                 $newResult = array(
                     'juegoID' => $juego->id,
                     'jugador' => $jsonResult['jugador'],
