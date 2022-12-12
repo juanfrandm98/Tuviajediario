@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\JuegoController;
+use App\Http\Controllers\ResultadoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +30,9 @@ Route::get('/testAlexa', function() {
 Route::get('addJuego', [JuegoController::class, 'addJuego']);
 Route::get('getRandomJuego', [JuegoController::class, 'getRandomJuego']);
 /**
- *
+ * Rutas para los Resultados
  */
+Route::get('addResultado', [ResultadoController::class, 'addResultado']);
 
 Route::get('phpmyinfo', function () {
     phpinfo(); 
