@@ -29,7 +29,7 @@ class ResultadoController extends Controller
                 $newDBEntrance = new Resultado($newResult);
                 $newDBEntrance->save();
 
-                if($resultado = Resultado::where('juegoID', $jsonResult['juegoID'])->where('jugador', $jsonResult['jugador'])->
+                if($resultado = Resultado::where('juegoID', $juego->id)->where('jugador', $jsonResult['jugador'])->
                                            where('fecha', $jsonResult['fecha'])->first()) {
                     $message = 'Resultado introducido correctamente (ID: ' . $resultado->id . ').';
                     $statusCode = 200;
