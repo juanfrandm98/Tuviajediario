@@ -33,6 +33,7 @@ Route::get('getRandomJuego', [JuegoController::class, 'getRandomJuego']);
  * Rutas para los Resultados
  */
 Route::get('addResultado', [ResultadoController::class, 'addResultado']);
+Route::get('addResultado2', [ResultadoController::class, 'addResultado2']);
 
 Route::get('phpmyinfo', function () {
     phpinfo(); 
