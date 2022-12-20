@@ -10,8 +10,7 @@ class JuegoController extends Controller
 
     public function addJuego(Request $request)
     {
-        //$jsonParams = $request->get('json');
-        $jsonParams = $_REQUEST['json'];
+        $jsonParams = $request->get('json');
         $message = 'Error en los datos enviados.';
         $statusCode = 409;
 

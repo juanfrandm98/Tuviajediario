@@ -9,7 +9,8 @@ use App\Models\Juego;
 class ResultadoController extends Controller
 {
     public function addResultado2(Request $request) {
-        $jsonParams = $request->get('json');
+        $jsonParams = $_REQUEST['json'];
+        //$jsonParams = $request->get('json');
         $message = 'Error: fallo en los datos enviados.';
         $statusCode = 409;
 
