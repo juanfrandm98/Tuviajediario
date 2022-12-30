@@ -64,4 +64,8 @@ class JuegoController extends Controller
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
     }
 
+    public function getAudioCampanada(Request $request) {
+
+    }
+
 }
