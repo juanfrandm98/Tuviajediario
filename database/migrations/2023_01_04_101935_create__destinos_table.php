@@ -16,6 +16,11 @@ class CreateDestinosTable extends Migration
         Schema::create('_destinos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('descripcion');
+            $table->enum('clima', ['frio', 'caliente']);
+            $table->enum('situacion', ['interior', 'costa']);
+            $table->array('datos_interes');
         });
     }
 
