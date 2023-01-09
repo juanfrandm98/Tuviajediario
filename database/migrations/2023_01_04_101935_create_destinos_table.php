@@ -13,7 +13,7 @@ class CreateDestinosTable extends Migration
      */
     public function up()
     {
-        Schema::create('Destinos', function (Blueprint $table) {
+        Schema::create('destinos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->string('nombre');
