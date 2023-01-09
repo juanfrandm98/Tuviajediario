@@ -40,6 +40,7 @@ Route::get('addResultado2', [ResultadoController::class, 'addResultado2']);
  */
 Route::get('addDestino', [DestinoController::class, 'addDestino']);
 Route::get('addDatoInteres', [DestinoController::class, 'addDatoInteres']);
+Route::get('getRandomDestino', [DestinoController::class, 'getRandomDestino']);
 
 Route::get('phpmyinfo', function () {
     phpinfo(); 

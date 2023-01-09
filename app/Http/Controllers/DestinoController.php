@@ -65,4 +65,22 @@ class DestinoController extends Controller
 
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
     }
+
+    public function getRandomDestino(Request $request) {
+        /**
+         * Por ahora, $request no sirve para nada, pero queda preparado para que en un futuro incluya información
+         * sobre el usuario que solicita el nuevo Destino, para intentar que no se repitan los últimos que visitó.
+         */
+        $statusCode = 200;
+
+        $destino = Destino::inRandomOrder()->first();
+
+        return response()->json([
+            'nombre' => $destino->nombre,
+            'descripcion' => $destino->descripcion,
+            'clima' => $destino->clima,
+            'situacion' => $destino->situacion,
+            'datos_interes' => $destino->datos_interes
+        ], $statusCode);
+    }
 }
