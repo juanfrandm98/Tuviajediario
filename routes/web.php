@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\ResultadoController;
+use App\Http\Controllers\DestinoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,11 @@ Route::get('getRandomJuego', [JuegoController::class, 'getRandomJuego']);
  */
 Route::get('addResultado', [ResultadoController::class, 'addResultado']);
 Route::get('addResultado2', [ResultadoController::class, 'addResultado2']);
+/**
+ * Rutas para los Destinos
+ */
+Route::get('addDestino', [DestinoController::class, 'addDestino']);
+Route::get('addDatoInteres', [DestinoController::class, 'addDatoInteres']);
 
 Route::get('phpmyinfo', function () {
     phpinfo(); 
