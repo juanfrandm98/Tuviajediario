@@ -20,7 +20,7 @@ class CreateDestinosTable extends Migration
             $table->string('descripcion');
             $table->enum('clima', ['frio', 'caliente']);
             $table->enum('situacion', ['interior', 'costa']);
-            $table->array('datos_interes');
+            $table->json('datos_interes');
         });
     }
 

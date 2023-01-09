@@ -22,4 +22,9 @@ class Destino extends Model
         'situacion',
         'datos_interes'
     ];
+
+    // Tell Laravel to fetch text values and set them as arrays
+    protected $casts = [
+        'datos_interes' => 'array'
+    ];
 }
