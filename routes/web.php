@@ -30,6 +30,7 @@ Route::get('/testAlexa', function() {
  */
 Route::get('addJuego', [JuegoController::class, 'addJuego']);
 Route::get('getRandomJuego', [JuegoController::class, 'getRandomJuego']);
+Route::get('getAudioCampanada', [JuegoController::class, 'getAudioCampanada']);
 /**
  * Rutas para los Resultados
  */

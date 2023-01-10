@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Juego;
+use Nette\FileNotFoundException;
 
 class JuegoController extends Controller
 {
@@ -65,7 +66,23 @@ class JuegoController extends Controller
     }
 
     public function getAudioCampanada(Request $request) {
+        $numCampanadas = $request->get('num');
+        $message = 'Debe enviar como parámetro el número de campanadas que desea recibir.';
+        $statusCode = 409;
 
+        if($numCampanadas) {
+            $filename = 'camp_' . $numCampanadas . '.mp3';
+            $filePath = storage_path() . '/app/sonidos_camp/' . $filename;
+
+            try {
+                $file = file_exists($filePath);
+                return response()->file($filePath);
+            } catch(FileNotFoundException $e) {
+                $message = 'No se encontró el archivo: ' . $filePath;
+            }
+        }
+
+        return response($message, $statusCode)->header('Content-Type', 'text/plain');
     }
 
 }
