@@ -77,7 +77,7 @@ class JuegoController extends Controller
             if(file_exists($filePath)) {
                 return response()->file($filePath);
             } else {
-                $message = 'No se encontró el archivo: ' . $filePath;
+                $message = 'No se encontró el archivo: ' . $filename;
             }
 
         }
