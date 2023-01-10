@@ -74,12 +74,12 @@ class JuegoController extends Controller
             $filename = 'camp_' . $numCampanadas . '.mp3';
             $filePath = storage_path() . '/app/sonidos_camp/' . $filename;
 
-            try {
-                $file = file_exists($filePath);
+            if(file_exists($filePath)) {
                 return response()->file($filePath);
-            } catch(FileNotFoundException $e) {
+            } else {
                 $message = 'No se encontró el archivo: ' . $filePath;
             }
+
         }
 
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
