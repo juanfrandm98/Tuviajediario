@@ -3,7 +3,7 @@
 @section('titulo', 'Menú Principal')
 
 @section('contenido')
-    <div>
+    <div id="menu_principal">
         <h2>Menú Principal</h2>
 
         <div id="opciones_menu_principal">
