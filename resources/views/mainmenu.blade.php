@@ -5,10 +5,10 @@
 </head>
 
 <body>
-    <div id="menu_principal">
+    <div>
         <h2>Menú Principal</h2>
 
-        <div id="opciones_menu_principal">
+        <div>
             <a> Lista de Juegos </a>
             <a> Lista de Destinos </a>
         </div>
