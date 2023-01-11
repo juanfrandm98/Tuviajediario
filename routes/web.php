@@ -16,15 +16,18 @@ use App\Http\Controllers\DestinoController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
+/**
+ * Primera ruta de prueba
+ */
 Route::get('/testAlexa', function() {
 	return response('PROBANDO', 200)->header('Content-Type', 'text/plain');
 });
-
+/**
+ * Rutas para la página web
+ */
+Route::get('/', function() {
+    return view('mainmenu');
+});
 /**
  * Rutas para los Juegos
  */
@@ -42,7 +45,9 @@ Route::get('addResultado2', [ResultadoController::class, 'addResultado2']);
 Route::get('addDestino', [DestinoController::class, 'addDestino']);
 Route::get('addDatoInteres', [DestinoController::class, 'addDatoInteres']);
 Route::get('getRandomDestino', [DestinoController::class, 'getRandomDestino']);
-
+/**
+ * Ruta de PHP
+ */
 Route::get('phpmyinfo', function () {
     phpinfo(); 
 })->name('phpmyinfo');
