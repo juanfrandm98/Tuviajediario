@@ -9,6 +9,7 @@
         <div id="opciones_menu_principal">
             <a>Lista de Juegos</a>
             <a>Lista de Destinos</a>
+            <a>MOLINETE</a>
         </div>
     </div>
 @endsection
