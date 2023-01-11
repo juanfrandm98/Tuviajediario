@@ -2,7 +2,7 @@
     <head>
         <title>@yield('titulo') - Tu Viaje Diario</title>
         <meta charset="utf-8">
-        <link href="{{asset('css/app.css')}}" rel="stylesheet">
+        <link href="/public/css/app.css" rel="stylesheet">
     </head>
 
     <body>
