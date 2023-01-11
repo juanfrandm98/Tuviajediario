@@ -28,6 +28,9 @@ Route::get('/testAlexa', function() {
 Route::get('/', function() {
     return view('welcome');
 });
+Route::get('/mainmenu', function() {
+    return view('mainmenu');
+});
 /**
  * Rutas para los Juegos
  */
