@@ -1,17 +1,14 @@
-<html lang="es">
-    <head>
-        <title>Mi Viaje Diario - Menú Principal</title>
-        <meta charset="utf-8">
-    </head>
+@extends('base')
 
-    <body>
+@section('titulo', 'Menú Principal')
+
+@section('contenido')
+    <div>
+        <h2>Menú Principal</h2>
+
         <div>
-            <h2>Menú Principal</h2>
-
-            <div>
-                <a>Lista de Juegos</a>
-                <a>Lista de Destinos</a>
-            </div>
+            <a>Lista de Juegos</a>
+            <a>Lista de Destinos</a>
         </div>
-    </body>
-</html>
+    </div>
+@endsection
