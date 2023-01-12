@@ -4,7 +4,7 @@
 
 .contenido {
     text-align: center;
-    margin-top: 1175px;
+    margin-top: 175px;
     width: 100%;
     float: left;
 }
@@ -16,7 +16,7 @@
 .header {
     background-color: skyblue;
     position: absolute;
-    width: 100%;
+    width: 95%;
     float: left;
 }
 
