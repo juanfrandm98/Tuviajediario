@@ -7,8 +7,8 @@
 
     <body>
         <header>
-            <div>
-                <img src="/resources/images/logo_tu_viaje_diario.png" alt="Logo de Tu Viaje Diario">
+            <div class="header">
+                <img class="header_icon" src="/resources/images/logo_tu_viaje_diario.png" alt="Logo de Tu Viaje Diario">
 
                 <div>
                     <ul>

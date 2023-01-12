@@ -1,3 +1,24 @@
+/**
+        HEADER
+ */
+
+.header {
+    background-color: skyblue;
+    position: absolute;
+    width: 100%;
+    float: left;
+}
+
+.header_icon {
+    margin: 10px 20px;
+    max-height: 80px;
+    float: left;
+}
+
+/**
+        MAIN MENU
+ */
+
 #menu_principal {
     margin: auto;
     width: 50%;
