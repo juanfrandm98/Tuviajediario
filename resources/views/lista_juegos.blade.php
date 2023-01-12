@@ -18,7 +18,6 @@
                     <th>Cota Inf.</th>
                     <th>Área Cognitiva</th>
                     <th>Explicación</th>
-                    <th></th>
                 </tr>
 
                 @if(!empty($lista_juegos))

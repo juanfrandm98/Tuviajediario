@@ -87,7 +87,9 @@ class DestinoController extends Controller
     /**
      * FUNCIONES DE NAVEGACIÓN
      */
-    public function goToListaDestinos(Request $request) {
-        return view('lista_destinos');
+    public function goToListaDestinos() {
+        $lista_destinos = Destino::all();
+
+        return view('lista_destinos', ['lista_destinos' => $lista_destinos]);
     }
 }
