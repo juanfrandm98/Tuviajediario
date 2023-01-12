@@ -15,6 +15,38 @@
     float: left;
 }
 
+.menu_header {
+    float: left;
+    margin: 0.9%;
+}
+
+.menu_header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.menu_header li:hover {
+    background-color: #444444;
+}
+
+.menu_header li {
+    float: left;
+}
+
+.menu_header li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
 /**
         MAIN MENU
  */
