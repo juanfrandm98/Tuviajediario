@@ -16,7 +16,7 @@
 .header {
     background-color: skyblue;
     position: absolute;
-    width: 95%;
+    width: 99%;
     float: left;
 }
 
@@ -74,4 +74,20 @@
 #opciones_menu_principal {
     width: 60%;
     margin: auto;
+}
+
+#opciones_menu_principal a {
+    background-color: yellow;
+    font-size: 20px;
+    color: white;
+    display: block;
+    padding: 12px;
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+#opciones_menu_principal a:hover {
+    background-color: darkgoldenrod;
+    color: white;
+    font-weight: bold;
 }
