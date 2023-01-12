@@ -9,6 +9,15 @@
     float: left;
 }
 
+.tabla {
+    border-collapse: collapse;
+    margin: auto;
+}
+
+tr:nth-child(even) {
+    background-color: skyblue;
+}
+
 /**
         HEADER
  */
