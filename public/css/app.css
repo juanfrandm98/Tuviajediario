@@ -91,3 +91,17 @@
     color: white;
     font-weight: bold;
 }
+
+/**
+        LISTA JUEGOS
+ */
+
+.zona_lista_juegos {
+    width: 90%;
+    margin: auto;
+}
+
+.tabla_juegos {
+    float: left;
+    margin: 20px auto;
+}
