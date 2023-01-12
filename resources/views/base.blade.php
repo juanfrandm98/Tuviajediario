@@ -10,7 +10,7 @@
             <div class="header">
                 <img class="header_icon" src="/resources/images/logo_tu_viaje_diario.png" alt="Logo de Tu Viaje Diario">
 
-                <div>
+                <div class="menu_header">
                     <ul>
                         <li><a href="{{route('mainmenu')}}">Menú Principal</a></li>
                         <li><a>Cerrar Sesión</a></li>
