@@ -83,4 +83,11 @@ class DestinoController extends Controller
             'datos_interes' => $destino->datos_interes
         ], $statusCode);
     }
+
+    /**
+     * FUNCIONES DE NAVEGACIÓN
+     */
+    public function goToListaDestinos(Request $request) {
+        return view('lista_destinos');
+    }
 }

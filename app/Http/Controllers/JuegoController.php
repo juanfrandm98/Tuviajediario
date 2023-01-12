@@ -85,4 +85,11 @@ class JuegoController extends Controller
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
     }
 
+    /**
+     * FUNCIONES DE NAVEGACIÓN
+     */
+    public function goToListaJuegos(Request $request) {
+        return view('lista_juegos');
+    }
+
 }
