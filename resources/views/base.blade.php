@@ -6,6 +6,18 @@
     </head>
 
     <body>
+        <header>
+            <div>
+                <img src="{{asset('images/logo_tu_viaje_diario.png')}}" alt="Logo de Tu Viaje Diario">
+
+                <div>
+                    <ul>
+                        <li><a href="{{route('mainmenu')}}"></a></li>
+                        <li><a>Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
         @yield('contenido')
     </body>
 </html>

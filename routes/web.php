@@ -30,7 +30,7 @@ Route::get('/', function() {
 });
 Route::get('/mainmenu', function() {
     return view('mainmenu');
-});
+})->name('mainmenu');
 Route::get('goToListaJuegos', [JuegoController::class, 'goToListaJuegos'])->name('lista_juegos');
 Route::get('goToListaDestinos', [DestinoController::class, 'goToListaDestinos'])->name('lista_destinos');
 /**
