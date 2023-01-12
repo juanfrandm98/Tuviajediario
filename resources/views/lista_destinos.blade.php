@@ -18,14 +18,14 @@
                     <th>Situación</th>
                 </tr>
 
-                @if(!empty($lista_juegos))
-                    @foreach($lista_juegos as $juego)
+                @if(!empty($lista_destinos))
+                    @foreach($lista_destinos as $destino)
                         <tr>
-                            <td>{{ucfirst($juego->id)}}</td>
-                            <td>{{ucfirst($juego->nombre)}}</td>
-                            <td>{{ucfirst($juego->descripcion)}}</td>
-                            <td>{{ucfirst($juego->clima)}}</td>
-                            <td>{{ucfirst($juego->situacion)}}</td>
+                            <td>{{ucfirst($destino->id)}}</td>
+                            <td>{{ucfirst($destino->nombre)}}</td>
+                            <td>{{ucfirst($destino->descripcion)}}</td>
+                            <td>{{ucfirst($destino->clima)}}</td>
+                            <td>{{ucfirst($destino->situacion)}}</td>
                         </tr>
                     @endforeach
                 @endif
