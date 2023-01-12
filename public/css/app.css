@@ -15,7 +15,7 @@
 }
 
 tr:nth-child(even) {
-    background-color: skyblue;
+    background-color: lightblue;
 }
 
 /**
