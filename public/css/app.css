@@ -1,4 +1,15 @@
 /**
+        GENERAL
+ */
+
+.contenido {
+    text-align: center;
+    margin-top: 1175px;
+    width: 100%;
+    float: left;
+}
+
+/**
         HEADER
  */
 
