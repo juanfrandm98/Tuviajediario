@@ -88,8 +88,10 @@ class JuegoController extends Controller
     /**
      * FUNCIONES DE NAVEGACIÓN
      */
-    public function goToListaJuegos(Request $request) {
-        return view('lista_juegos');
+    public function goToListaJuegos() {
+        $lista_juegos = Juego::all();
+
+        return view('lista_juegos', ['lista_juegos' => $lista_juegos]);
     }
 
 }
