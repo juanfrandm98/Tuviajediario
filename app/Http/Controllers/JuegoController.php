@@ -47,7 +47,8 @@ class JuegoController extends Controller
         $tipoJuego = $request->get('tipo');
 
         if($tipoJuego) {
-            $juego = Juego::inRandomOrder()->where('tipo', $tipoJuego)->first();
+            //$juego = Juego::inRandomOrder()->where('tipo', $tipoJuego)->first();
+            $juego = Juego::inRandomOrder()->except([1,4])->where('tipo', $tipoJuego)->first();
 
             if($juego) {
                 $statusCode = 200;
