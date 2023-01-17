@@ -42,7 +42,7 @@ class JuegoController extends Controller
     public function editJuego(Request $request) {
         $id = $request->get('id');
         $nombre = $request->get('nombre');
-        $explicacion = $request->get('explicaicon');
+        $explicacion = $request->get('explicacion');
         $tipo = $request->get('tipo');
         $cota_inferior = $request->get('cota_inferior');
         $codigo = $request->get('codigo');
@@ -56,10 +56,10 @@ class JuegoController extends Controller
                 $juego->codigo = $codigo;
 
                 $juego->save();
-
-                return redirect()->route('lista_juegos');
             }
         }
+
+        return redirect()->route('lista_juegos');
     }
 
     public function getRandomJuego(Request $request)
