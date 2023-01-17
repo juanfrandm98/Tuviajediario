@@ -38,6 +38,7 @@ Route::get('goToEditarJuego', [JuegoController::class, 'goToEditarJuego'])->name
  * Rutas para los Juegos
  */
 Route::get('addJuego', [JuegoController::class, 'addJuego']);
+Route::get('editJuego', [JuegoController::class, 'editJuego']);
 Route::get('getRandomJuego', [JuegoController::class, 'getRandomJuego']);
 Route::get('getAudioCampanada', [JuegoController::class, 'getAudioCampanada']);
 /**

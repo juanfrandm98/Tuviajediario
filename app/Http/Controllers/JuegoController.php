@@ -39,6 +39,10 @@ class JuegoController extends Controller
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
     }
 
+    public function editJuego(Request $request) {
+
+    }
+
     public function getRandomJuego(Request $request)
     {
         $message = 'Debe enviar como parámetro el tipo de juego que desea recibir.';
