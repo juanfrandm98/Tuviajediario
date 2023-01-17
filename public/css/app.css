@@ -120,3 +120,35 @@ tr:nth-child(even) {
     float: left;
     margin: 20px auto;
 }
+
+/**
+        EDITAR JUEGO
+ */
+.zona_edicion_juego {
+    margin: auto;
+    width: 70%;
+}
+
+.form_edicion_juego {
+    margin: 30px 10px 20px;
+}
+
+.form_edicion_juego > .button {
+    margin-top: 20px;
+}
+
+.edit_label {
+    float: left;
+    color: darkred;
+    font-weight: bold;
+}
+
+.small_text_input {
+    width: 100%;
+    height: 20px;
+}
+
+.big_text_input {
+    width: 100px;
+    height: 50px;
+}
