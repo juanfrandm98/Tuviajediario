@@ -151,4 +151,5 @@ tr:nth-child(even) {
 .big_text_input {
     width: 100%;
     height: 50px;
+    text-align: left;
 }
