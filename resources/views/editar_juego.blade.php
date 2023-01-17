@@ -36,7 +36,7 @@
                 <option value="especifico">Específico</option>
             </select>
 
-            <label class="edit_label" for="cota_inferior">Cota Inferior (Puntos):</label><br>
+            <label class="edit_label" for="cota_inferior">Cota Inferdior (Puntos):</label><br>
             <input type="number" name="cota_inferior" id="cota_inferior" class="small_text_input"
                 @if(isset($datos_iniciales)) value="{{$datos_iniciales->cota_inferior}}"@endif><br><br>
         </form>
