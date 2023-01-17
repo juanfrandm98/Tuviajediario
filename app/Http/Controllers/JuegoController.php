@@ -40,7 +40,26 @@ class JuegoController extends Controller
     }
 
     public function editJuego(Request $request) {
+        $id = $request->get('id');
+        $nombre = $request->get('nombre');
+        $explicacion = $request->get('explicaicon');
+        $tipo = $request->get('tipo');
+        $cota_inferior = $request->get('cota_inferior');
+        $codigo = $request->get('codigo');
 
+        if(isset($id)) {
+            if($juego = Juego::find($id)) {
+                $juego->nombre = $nombre;
+                $juego->explicacion = $explicacion;
+                $juego->tipo = $tipo;
+                $juego->cota_inferior = $cota_inferior;
+                $juego->codigo = $codigo;
+
+                $juego->save();
+
+                return redirect()->route('lista_juegos');
+            }
+        }
     }
 
     public function getRandomJuego(Request $request)
