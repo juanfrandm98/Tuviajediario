@@ -11,7 +11,6 @@
         <div class="tabla_juegos">
             <table class="tabla">
                 <tr>
-                    <th>ID</th>
                     <th>Nombre</th>
                     <th>Código</th>
                     <th>Tipo</th>
@@ -23,7 +22,6 @@
                 @if(!empty($lista_juegos))
                     @foreach($lista_juegos as $juego)
                         <tr>
-                            <td>{{ucfirst($juego->id)}}</td>
                             <td>{{ucfirst($juego->nombre)}}</td>
                             <td>{{ucfirst($juego->codigo)}}</td>
                             <td>{{ucfirst($juego->tipo)}}</td>
