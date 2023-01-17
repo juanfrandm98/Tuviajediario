@@ -38,7 +38,7 @@
 
             <label class="edit_label" for="codigo">Código:</label>
             <input type="text" name="codigo" id="codigo" class="small_text_input"
-                @if(isset($datos_iniciales)) value="{{ucfirst($datos_iniciales->codigo)}}" @endif>
+                @if(isset($datos_iniciales)) value={{$datos_iniciales->codigo}} @endif>
         </form>
     </div>
 @endsection
