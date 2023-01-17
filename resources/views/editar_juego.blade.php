@@ -40,7 +40,10 @@
                     <label class="edit_label" for="tipo">Tipo:</label>
                     <select name="tipo" id="tipo">
                         <option value="general">General</option>
-                        <option value="especifico">Específico</option>
+                        <option value="especifico"
+                                @if(isset($datos_iniciales) && ($datos_iniciales->tipo == 'especifico'))
+                                    selected="selected"
+                                @endif>Específico</option>
                     </select>
                 </div>
                 <div class="column2">
