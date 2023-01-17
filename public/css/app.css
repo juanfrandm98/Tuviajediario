@@ -12,6 +12,12 @@
     padding: 15px 32px;
 }
 
+.button:hover {
+    background-color: #e09e2a;
+    color: white;
+    font-weight: bold;
+}
+
 .contenido {
     text-align: center;
     margin-top: 175px;
