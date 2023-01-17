@@ -95,4 +95,15 @@ class JuegoController extends Controller
         return view('lista_juegos', ['lista_juegos' => $lista_juegos]);
     }
 
+    public function goToEditarJuego(Request $request) {
+        $juegoID = $request->get('juego_id');
+
+        if($juegoID) {
+            $juego = Juego::find($juegoID);
+            return view('editar_juego', ['datos_iniciales' => $juego]);
+        } else {
+            return view('lista_juegos', ['lista_juegos' => Juego::all()]);
+        }
+    }
+
 }

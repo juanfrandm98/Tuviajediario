@@ -33,6 +33,7 @@ Route::get('/mainmenu', function() {
 })->name('mainmenu');
 Route::get('goToListaJuegos', [JuegoController::class, 'goToListaJuegos'])->name('lista_juegos');
 Route::get('goToListaDestinos', [DestinoController::class, 'goToListaDestinos'])->name('lista_destinos');
+Route::get('goToEditarJuego', [JuegoController::class, 'goToEditarJuego'])->name('editar_juego');
 /**
  * Rutas para los Juegos
  */

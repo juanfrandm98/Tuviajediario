@@ -30,6 +30,12 @@
                             <td>{{ucfirst($juego->cota_inferior)}}</td>
                             <td>{{ucfirst($juego->area_cognitiva)}}</td>
                             <td>{{ucfirst($juego->explicacion)}}</td>
+                            <td>
+                                <form method="get" action="{{route('editar_juego')}}">
+                                    <input type="hidden" id="juego_id" name="juego_id" value="{{$juego->id}}">
+                                    <button type="submit">Editar</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 @endif
