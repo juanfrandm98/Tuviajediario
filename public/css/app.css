@@ -155,7 +155,7 @@ tr:nth-child(even) {
 }
 
 .small_text_input {
-    width: 30%;
+    width: 75%;
     height: 20px;
     float: left;
 }
