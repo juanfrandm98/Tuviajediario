@@ -139,16 +139,16 @@ tr:nth-child(even) {
 
 .edit_label {
     float: left;
-    color: darkred;
+    color: #f9b234;
     font-weight: bold;
 }
 
 .small_text_input {
-    width: 100%;
+    width: 50%;
     height: 20px;
 }
 
 .big_text_input {
-    width: 100px;
+    width: 100%;
     height: 50px;
 }
