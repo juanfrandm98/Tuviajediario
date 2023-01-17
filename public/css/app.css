@@ -24,6 +24,12 @@ tr:nth-child(even) {
     background-color: lightblue;
 }
 
+.column2 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
 /**
         HEADER
  */
