@@ -17,7 +17,7 @@
         </h2>
 
         <form class="form_edicion_juego" method="get" action="{{route('editJuego')}}">
-            <div>
+            <div class="row">
                 <div class="column2">
                     <label class="edit_label" for="nombre">Nombre del Juego:</label>
                     <input type="text" name="nombre" id="nombre" class="small_text_input"
@@ -35,7 +35,7 @@
                 @if(isset($datos_iniciales)){{$datos_iniciales->explicacion}}@endif
             </textarea><br><br>
 
-            <div>
+            <div class="row">
                 <div class="column2">
                     <label class="edit_label" for="tipo">Tipo:</label>
                     <select name="tipo" id="tipo">

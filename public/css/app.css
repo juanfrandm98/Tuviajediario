@@ -30,6 +30,11 @@ tr:nth-child(even) {
     padding: 10px;
 }
 
+.row {
+    display: table;
+    clear: both;
+}
+
 /**
         HEADER
  */
