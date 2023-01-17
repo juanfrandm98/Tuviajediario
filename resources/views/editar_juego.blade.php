@@ -49,6 +49,15 @@
                            @if(isset($datos_iniciales)) value="{{$datos_iniciales->cota_inferior}}"@endif><br><br>
                 </div>
             </div>
+
+            <input type="hidden" id="id" name="id"
+                @if(isset($datos_iniciales)) value="{{$datos_iniciales->id}}" @endif>
+
+            <button class="button" type="submit">Guardar</button>
+        </form>
+
+        <form method="get" action="{{route('lista_juegos')}}">
+            <button class="button" type="submit">Atrás</button>
         </form>
     </div>
 @endsection
