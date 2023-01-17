@@ -30,7 +30,7 @@ tr:nth-child(even) {
     padding: 10px;
 }
 
-.row {
+.row:after {
     width: 100%;
     display: table;
     clear: both;
