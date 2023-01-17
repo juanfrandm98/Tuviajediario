@@ -6,7 +6,7 @@
     @section('titulo', 'Nuevo Juego')
 @endif
 
-@section('content')
+@section('contenido')
     <div class="zona_edicion_juego">
         <h2>
             @if(isset($datos_iniciales))
