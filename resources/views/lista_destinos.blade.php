@@ -30,6 +30,12 @@
                             <td>{{ucfirst($destino->descripcion)}}</td>
                             <td>{{ucfirst($destino->clima)}}</td>
                             <td>{{ucfirst($destino->situacion)}}</td>
+                            <td>
+                                <form method="get" action="{{route('editar_destino')}}">
+                                    <input type="hidden" id="destino_id" name="destino_id" value="{{$destino->id}}">
+                                    <button type="submit">Editar</button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 @endif
