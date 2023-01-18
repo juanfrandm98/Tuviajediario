@@ -55,12 +55,12 @@
 
             <div>
                 <table class="tabla">
-                    @if(!empty($areas_cognitivas))
+                    @if(!empty($areas))
                         <tr>
-                            @foreach($areas_cognitivas as $area)
+                            @foreach($areas as $area)
                                 <td>
                                     <label><input type="checkbox" id="{{$area->id}}_check" name="{{$area->id}}_check"
-                                        @if(in_array($area->id, $datos_iniciales->$areas_cognitivas))checked@endif>
+                                        @if(in_array($area->id, $datos_iniciales->$areas_cognitivas)) checked @endif>
                                         {{$area->nombre}}
                                     </label>
                                 </td>

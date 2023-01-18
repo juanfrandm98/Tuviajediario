@@ -134,7 +134,7 @@ class JuegoController extends Controller
         if($juegoID) {
             $juego = Juego::find($juegoID);
             $areas = AreaCognitiva::all();
-            return view('editar_juego', ['datos_iniciales' => $juego, 'areas_cognitivas' => $areas]);
+            return view('editar_juego', ['datos_iniciales' => $juego, 'areas' => $areas]);
         } else {
             return view('lista_juegos', ['lista_juegos' => Juego::all()]);
         }
