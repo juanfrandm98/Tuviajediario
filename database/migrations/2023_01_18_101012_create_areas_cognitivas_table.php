@@ -16,6 +16,12 @@ class CreateAreasCognitivasTable extends Migration
         Schema::create('areas_cognitivas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
+        });
+
+        Schema::table('juegos', function (Blueprint $table) {
+            $table->json('area_cognitiva')->nullable()->change();
+            $table->renameColumn('area_cognitiva', 'areas_cognitivas');
         });
     }
 

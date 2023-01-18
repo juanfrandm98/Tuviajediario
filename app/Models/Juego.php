@@ -21,6 +21,11 @@ class Juego extends Model
         'explicacion',
         'tipo',
         'cota_inferior',
-        'area_cognitiva'
+        'areas_cognitivas'
+    ];
+
+    // Tell Laravel to fetch text values and set them as arrays
+    protected $casts = [
+        'areas_cognitivas' => 'array'
     ];
 }
