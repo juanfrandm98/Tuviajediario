@@ -25,7 +25,7 @@ class AreaCognitivaController extends Controller
             $newDBEntrance->save();
         }
 
-        return redirect()->route('lista_juegos');
+        return redirect()->route('lista_areas_cognitivas');
     }
 
     /**
