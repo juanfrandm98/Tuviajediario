@@ -42,9 +42,13 @@ class AreaCognitivaController extends Controller
 
         if($areaID) {
             $area = AreaCognitiva::find($areaID);
-            return view('editar_area', ['datos_iniciales' => $area]);
+
+            if($area)
+                return view('editar_area', ['datos_iniciales' => $area]);
+            else
+                return view('lista_areas_cognitivas', ['lista_areas' => AreaCognitiva::all()]);
         } else {
-            return view('lista_areas_cognitivas', ['lista_areas' => AreaCognitiva::all()]);
+            return view('editar_area');
         }
     }
 }
