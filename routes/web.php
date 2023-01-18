@@ -58,7 +58,7 @@ Route::get('getRandomDestino', [DestinoController::class, 'getRandomDestino']);
 /**
  * Rutas para las Áreas Cognitivas
  */
-Route::get('editAreaCognitiva', [AreaCognitivaController::class, 'editAreaCognitiva'])->name('edit_area');
+Route::get('editAreaCognitiva', [AreaCognitivaController::class, 'editAreaCognitiva'])->name('editAreaCognitiva');
 /**
  * Ruta de PHP
  */
