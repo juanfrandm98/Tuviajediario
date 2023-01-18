@@ -59,7 +59,8 @@
                         <tr>
                             @foreach($areas_cognitivas as $area)
                                 <td>
-                                    <label><input type="checkbox" id="{{$area->id}}_check" name="{{$area->id}}_check">
+                                    <label><input type="checkbox" id="{{$area->id}}_check" name="{{$area->id}}_check"
+                                        @if(in_array($area->id, $datos_iniciales->$areas_cognitivas))checked@endif>
                                         {{$area->nombre}}
                                     </label>
                                 </td>
