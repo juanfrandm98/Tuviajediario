@@ -40,8 +40,8 @@
                 <div class="column2">
                     <label class="edit_label" for="situacion">Situación:</label>
                     <select name="situacion" id="situacion">
-                        <option value="general">Interior</option>
-                        <option value="especifico"
+                        <option value="interior">Interior</option>
+                        <option value="costa"
                                 @if(isset($datos_iniciales) && ($datos_iniciales->situacion == 'costa'))
                                     selected="selected"
                                 @endif>Costa</option>
