@@ -28,6 +28,10 @@ class AreaCognitivaController extends Controller
         return redirect()->route('lista_areas_cognitivas');
     }
 
+    public function getAreas() {
+        return AreaCognitiva::all();
+    }
+
     /**
      * FUNCIONES DE NAVEGACIÓN
      */

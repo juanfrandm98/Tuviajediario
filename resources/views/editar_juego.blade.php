@@ -53,6 +53,16 @@
                 </div>
             </div>
 
+            <div>
+                @if(!empty($areas_cognitivas))
+                    @foreach($areas_cognitivas as $area)
+                        <label><input type="checkbox" id="{{$area->nombre}}_check" value="{{$area->nombre}}">
+                            {{$area->nombre}}
+                        </label>
+                    @endforeach
+                @endif
+            </div>
+
             <input type="hidden" id="id" name="id"
                 @if(isset($datos_iniciales)) value="{{$datos_iniciales->id}}" @endif>
 

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AreaCognitiva;
 use Illuminate\Http\Request;
 use App\Models\Juego;
-use Nette\FileNotFoundException;
+use App\Http\Controllers\AreaCognitivaController;
 
 class JuegoController extends Controller
 {
@@ -123,7 +124,8 @@ class JuegoController extends Controller
 
         if($juegoID) {
             $juego = Juego::find($juegoID);
-            return view('editar_juego', ['datos_iniciales' => $juego]);
+            $areas = AreaCognitiva::all();
+            return view('editar_juego', ['datos_iniciales' => $juego, 'areas_cognitivas' => $areas]);
         } else {
             return view('lista_juegos', ['lista_juegos' => Juego::all()]);
         }
