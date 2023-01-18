@@ -28,13 +28,15 @@
                             <td>{{ucfirst($juego->cota_inferior)}}</td>
                             <td>
                                 @if(isset($juego->areas_cognitivas))
-                                    @foreach($juego->areas_cognitivas as $area_juego)
-                                        @foreach($areas_cognitivas as $area)
-                                            @if($area_juego == $area->id)
-                                                {{$area->nombre}}
-                                            @endif
+                                    <ul>
+                                        @foreach($juego->areas_cognitivas as $area_juego)
+                                            @foreach($areas_cognitivas as $area)
+                                                @if($area_juego == $area->id)
+                                                    <li>{{$area->nombre}}</li>
+                                                @endif
+                                            @endforeach
                                         @endforeach
-                                    @endforeach
+                                    </ul>
                                 @else
                                     Por determinar
                                 @endif
