@@ -27,7 +27,7 @@
                             <td>{{ucfirst($juego->tipo)}}</td>
                             <td>{{ucfirst($juego->cota_inferior)}}</td>
                             <td>
-                                @foreach($juego->areas_cognitivas as $area_juego)
+                                @foreach(array_values($juego->areas_cognitivas) as $area_juego)
                                     @foreach($areas_cognitivas as $area)
                                         @if($area_juego == $area->id)
                                             {{$area->nombre}}
