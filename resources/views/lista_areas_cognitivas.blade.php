@@ -8,6 +8,10 @@
             <h2>Lista de Áreas Cognitivas</h2>
         </div>
 
+        <div class="new_item_button">
+            <a class="button" href="{{route('editar_area')}}"> Crear Área Cognitiva</a>
+        </div>
+
         <div>
             <table class="tabla">
                 <tr>

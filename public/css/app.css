@@ -182,3 +182,12 @@ tr:nth-child(even) {
     height: 50px;
     text-align: left;
 }
+
+/**
+
+ */
+
+.new_item_button {
+    float: right;
+    margin: 20px auto;
+}
