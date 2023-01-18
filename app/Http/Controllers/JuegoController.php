@@ -52,7 +52,7 @@ class JuegoController extends Controller
         $areas = AreaCognitiva::all();
         foreach ($areas as $area) {
             if($request->input($area->id . '_check'))
-                $areas_juego = array_push($areas_juego, $area->id);
+                $num = array_push($areas_juego, $area->id);
         }
 
         if(isset($id)) {
