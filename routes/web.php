@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\ResultadoController;
 use App\Http\Controllers\DestinoController;
+use App\Http\Controllers\AreaCognitivaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +34,9 @@ Route::get('/mainmenu', function() {
 })->name('mainmenu');
 Route::get('goToListaJuegos', [JuegoController::class, 'goToListaJuegos'])->name('lista_juegos');
 Route::get('goToListaDestinos', [DestinoController::class, 'goToListaDestinos'])->name('lista_destinos');
+Route::get('goToListaAreasCognitivas', [AreaCognitivaController::class, 'goToListaAreasCognitivas'])->name('lista_areas_cognitivas');
 Route::get('goToEditarJuego', [JuegoController::class, 'goToEditarJuego'])->name('editar_juego');
+Route::get('goToEditarAreaCognitiva', [AreaCognitivaController::class, 'goToEditarAreaCognitiva'])->name('editar_area');
 /**
  * Rutas para los Juegos
  */
@@ -52,6 +55,10 @@ Route::get('addResultado2', [ResultadoController::class, 'addResultado2']);
 Route::get('addDestino', [DestinoController::class, 'addDestino']);
 Route::get('addDatoInteres', [DestinoController::class, 'addDatoInteres']);
 Route::get('getRandomDestino', [DestinoController::class, 'getRandomDestino']);
+/**
+ * Rutas para las Áreas Cognitivas
+ */
+Route::get('editAreaCognitiva', [AreaCognitivaController::class, 'editAreaCognitiva'])->name('edit_area');
 /**
  * Ruta de PHP
  */
