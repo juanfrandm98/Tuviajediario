@@ -37,6 +37,7 @@ Route::get('goToListaDestinos', [DestinoController::class, 'goToListaDestinos'])
 Route::get('goToListaAreasCognitivas', [AreaCognitivaController::class, 'goToListaAreasCognitivas'])->name('lista_areas_cognitivas');
 Route::get('goToEditarJuego', [JuegoController::class, 'goToEditarJuego'])->name('editar_juego');
 Route::get('goToEditarAreaCognitiva', [AreaCognitivaController::class, 'goToEditarAreaCognitiva'])->name('editar_area');
+Route::get('goToEditarDestino', [DestinoController::class, 'goToEditarDestino'])->name('editar_destino');
 /**
  * Rutas para los Juegos
  */
@@ -53,6 +54,7 @@ Route::get('addResultado2', [ResultadoController::class, 'addResultado2']);
  * Rutas para los Destinos
  */
 Route::get('addDestino', [DestinoController::class, 'addDestino']);
+Route::get('editDestino', [DestinoController::class, 'editDestino'])->name('editDestino');
 Route::get('addDatoInteres', [DestinoController::class, 'addDatoInteres']);
 Route::get('getRandomDestino', [DestinoController::class, 'getRandomDestino']);
 /**

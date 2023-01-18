@@ -8,6 +8,10 @@
             <h2>Lista de Destinos</h2>
         </div>
 
+        <div class="new_item_button">
+            <a class="button" href="{{route('editar_destino')}}"> Crear Destino</a>
+        </div>
+
         <div>
             <table class="tabla">
                 <tr>

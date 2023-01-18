@@ -38,6 +38,36 @@ class DestinoController extends Controller
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
     }
 
+    public function editDestino(Request $request) {
+        $id = $request->get('id');
+        $nombre = $request->get('nombre');
+        $descripcion = $request->get('descripcion');
+        $clima = $request->get('clima');
+        $situacion = $request->get('situacion');
+
+        if(isset($id)) {
+            if($destino = Destino::find($id)) {
+                $destino->nombre = $nombre;
+                $destino->descripcion = $descripcion;
+                $destino->clima = $clima;
+                $destino->situacion = $situacion;
+                $destino->save();
+            }
+        } else {
+            $newDestino = array(
+                'nombre' => $nombre,
+                'descripcion' => $descripcion,
+                'clima' => $clima,
+                'situacion' => $situacion
+            );
+
+            $newDBEntrance = new Destino($newDestino);
+            $newDBEntrance->save();
+        }
+
+        return redirect()->route('lista_destinos');
+    }
+
     public function addDatoInteres(Request $request) {
         $destinoID = $request->get('destino');
         $jsonDatos = $request->get('datos');
@@ -91,5 +121,20 @@ class DestinoController extends Controller
         $lista_destinos = Destino::all();
 
         return view('lista_destinos', ['lista_destinos' => $lista_destinos]);
+    }
+
+    public function goToEditarDestino(Request $request) {
+        $destinoID = $request->get('destino_id');
+
+        if($destinoID) {
+            $destino = Destino::find($destinoID);
+
+            if($destino)
+                return view('editar_destino', ['datos_iniciales' => $destino]);
+            else
+                return view('lista_destinos', ['lista_destinos' => Destino::all()]);
+        } else {
+            return view('editar_destino');
+        }
     }
 }
