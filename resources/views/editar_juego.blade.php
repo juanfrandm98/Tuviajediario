@@ -59,7 +59,7 @@
                         <tr>
                             @foreach($areas_cognitivas as $area)
                                 <td>
-                                    <label><input type="checkbox" id="{{$area->nombre}}_check" value="{{$area->nombre}}">
+                                    <label><input type="checkbox" id="{{$area->id}}_check" name="{{$area->id}}_check">
                                         {{$area->nombre}}
                                     </label>
                                 </td>

@@ -26,7 +26,15 @@
                             <td>{{ucfirst($juego->codigo)}}</td>
                             <td>{{ucfirst($juego->tipo)}}</td>
                             <td>{{ucfirst($juego->cota_inferior)}}</td>
-                            <td>{{ucfirst($juego->area_cognitiva)}}</td>
+                            <td>
+                                @foreach($juego->areas_cognitivas as $area_juego)
+                                    @foreach($areas_cognitivas as $area)
+                                        @if($area_juego == $area->id)
+                                            {{$area->nombre}}
+                                        @endif
+                                    @endforeach
+                                @endforeach
+                            </td>
                             <td>{{ucfirst($juego->explicacion)}}</td>
                             <td>
                                 <form method="get" action="{{route('editar_juego')}}">

@@ -48,6 +48,13 @@ class JuegoController extends Controller
         $cota_inferior = $request->get('cota_inferior');
         $codigo = $request->get('codigo');
 
+        $areas_juego = [];
+        $areas = AreaCognitiva::all();
+        foreach ($areas as $area) {
+            if($request->input($area->id . '_check'))
+                $areas_juego = array_push($areas_juego, $area->id);
+        }
+
         if(isset($id)) {
             if($juego = Juego::find($id)) {
                 $juego->nombre = $nombre;
@@ -55,6 +62,7 @@ class JuegoController extends Controller
                 $juego->tipo = $tipo;
                 $juego->cota_inferior = $cota_inferior;
                 $juego->codigo = $codigo;
+                $juego->areas_cognitivas = $areas_juego;
 
                 $juego->save();
             }
@@ -115,8 +123,9 @@ class JuegoController extends Controller
      */
     public function goToListaJuegos() {
         $lista_juegos = Juego::all();
+        $areas_cognitivas = AreaCognitiva::all();
 
-        return view('lista_juegos', ['lista_juegos' => $lista_juegos]);
+        return view('lista_juegos', ['lista_juegos' => $lista_juegos, 'areas_cognitivas' => $areas_cognitivas]);
     }
 
     public function goToEditarJuego(Request $request) {
