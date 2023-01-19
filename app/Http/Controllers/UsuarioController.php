@@ -46,6 +46,34 @@ class UsuarioController extends Controller
         session()->forget('usuarioRolID');
     }
 
+    public function  addTutelaa(Request $request) {
+        $this->addTutela($request->get('tutor'), $request->get('jugador'));
+        return redirect()->route('mainmenu');
+    }
+
+    private function addTutela($idtutor, $idjugador) {
+        $tutor = Usuario::find($idtutor);
+        $jugador = Usuario::find($idjugador);
+
+        if(is_null($tutor->tutela)) {
+            $tutor->tutela = array($jugador->id);
+        } else {
+            $oldArray = $tutor->tutela;
+            $tutor->datos_interes = array_merge($oldArray, array($jugador->id));
+        }
+
+        $tutor->save();
+
+        if(is_null($jugador->tutela)) {
+            $jugador->tutela = array($tutor->id);
+        } else {
+            $oldArray = $jugador->tutela;
+            $jugador->datos_interes = array_merge($oldArray, array($tutor->id));
+        }
+
+        $jugador->save();
+    }
+
     public function  registroUsuario(Request $request) {
         $email = $request->get('email');
 
@@ -90,6 +118,8 @@ class UsuarioController extends Controller
                         // Si el usuario es de tipo tutor o psicólogo, se le inicia sesión automáticamente
                         if($rol == 2 || $rol == 3)
                             $this->setSesion($usuario->id, $usuario->rolID);
+                        elseif ($rol == 4)
+                            $this->addTutela(session('usuarioID'), $usuario->id);
 
                         return redirect()->route('mainmenu');
                     } else {
