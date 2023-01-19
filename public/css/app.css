@@ -52,6 +52,19 @@ tr:nth-child(even) {
     clear: both;
 }
 
+.enlace {
+    color: #e09e2a;
+    text-decoration-line: underline;
+    text-decoration-color: #e09e2a;
+}
+
+.enlace:hover {
+    color: #e09e2a;
+    font-weight: bold;
+    text-decoration-line: underline;
+    text-decoration-color: #e09e2a;
+}
+
 /**
         HEADER
  */
