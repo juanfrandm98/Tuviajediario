@@ -52,8 +52,8 @@ class UsuarioController extends Controller
     }
 
     private function addTutela($idtutor, $idjugador) {
-        $tutor = Usuario::find($idtutor);
-        $jugador = Usuario::find($idjugador);
+        $tutor = Usuario::find(1);
+        $jugador = Usuario::find(2);
 
         if($tutor && $jugador) {
             if(is_null($tutor->tutela)) {
