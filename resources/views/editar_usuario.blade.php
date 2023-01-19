@@ -45,7 +45,7 @@
                 </div>
             </div><br><br>
 
-            <input type="hidden" id="rolID" name="rolID" value="4">
+            <input type="hidden" id="rol" name="rol" value="4">
 
             <button class="button" type="submit">Guardar</button>
         </form>
