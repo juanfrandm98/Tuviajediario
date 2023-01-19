@@ -66,7 +66,7 @@ Route::get('editAreaCognitiva', [AreaCognitivaController::class, 'editAreaCognit
 /**
  *  Rutas para los Usuarios
  */
-Route::get('loginUsuario', [UsuarioController::class, 'loginUsuario']);
+Route::get('loginUsuario', [UsuarioController::class, 'loginUsuario'])->name('loginUsuario');
 /**
  * Rutas para los Roles
  */
