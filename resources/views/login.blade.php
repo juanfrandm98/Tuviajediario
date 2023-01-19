@@ -5,7 +5,7 @@
 @section('contenido')
     <div class="login_background">
         <div class="login">
-            <img src="/resources/images/logo_tu_viaje_diario.png" alt="Logo de Tu Viaje Diario">
+            <img src="/resources/images/logo_tu_viaje_diario.png" alt="Logo de Tu Viaje Diario" class="login_icon">
 
             <h1>Tu Viaje Diario</h1>
 
