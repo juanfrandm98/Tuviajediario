@@ -131,7 +131,7 @@ class UsuarioController extends Controller
     public function goToRegistrarOtroUsuario() {
         $usuarioID = session('usuarioID');
 
-        if(isset($usuarioID)) return view('registrar_usuario');
+        if(isset($usuarioID)) return view('editar_usuario');
         else return redirect()->route('login');
     }
 }
