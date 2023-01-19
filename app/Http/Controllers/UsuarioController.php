@@ -75,10 +75,11 @@ class UsuarioController extends Controller
                     );
 
                     if($rol == 4) {
-                        $newUsuario = array(
+                        $datosExtra = array(
                             'alias' => $request->get('alias'),
                             'nombre_madre' => $request->get('nombre_madre')
                         );
+                        $newUsuario = array_merge($newUsuario, $datosExtra);
                     }
 
                     $newDBEntrance = new Usuario($newUsuario);
