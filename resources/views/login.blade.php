@@ -21,7 +21,7 @@
                 <input type="text" name="email" id="email" class="small_text_input"><br><br>
 
                 <label class="edit_label" for="contrasenia">Contraseña:</label>
-                <input type="text" name="contrasenia" id="contrasenia" class="small_text_input">
+                <input type="password" name="contrasenia" id="contrasenia" class="small_text_input">
 
                 <button class="button" type="submit">Login</button>
             </form>
