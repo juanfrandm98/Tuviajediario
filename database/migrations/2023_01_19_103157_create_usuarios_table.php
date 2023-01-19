@@ -16,16 +16,16 @@ class CreateUsuariosTable extends Migration
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('email')->unique();
-            $table->string('contrasenia');
+            $table->string('email')->unique()->nullable();
+            $table->string('contrasenia')->nullable();
             $table->string('nombre');
             $table->string('telefono');
             $table->enum('genero', ['hombre', 'mujer', 'otro']);
             $table->integer('rolID');
             $table->json('tutela')->nullable();
             $table->json('gestiona')->nullable();
-            $table->string('alias');
-            $table->string('nombre_madre');
+            $table->string('alias')->nullable();
+            $table->string('nombre_madre')->nullable();
             $table->json('resultados')->nullable();
             $table->json('ultimos_viajes')->nullable();
         });

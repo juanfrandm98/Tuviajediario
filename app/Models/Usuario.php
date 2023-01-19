@@ -8,4 +8,33 @@ use Illuminate\Database\Eloquent\Model;
 class Usuario extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that are mass asignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'id',
+        'email',
+        'contrasenia',
+        'nombre',
+        'telefono',
+        'genero',
+        'rolID',
+        'tutela',
+        'gestiona',
+        'alias',
+        'nombre_madre',
+        'resultados',
+        'ultimos_viajes'
+    ];
+
+    // Tell Laravel to fetch text values and set them as arrays
+    protected $casts = [
+        'tutela' => 'array',
+        'gestiona' => 'array',
+        'resultados' => 'array',
+        'ultimos_viajes' => 'array'
+    ];
 }

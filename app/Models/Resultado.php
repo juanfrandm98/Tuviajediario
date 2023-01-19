@@ -17,7 +17,7 @@ class Resultado extends Model
     protected $fillable = [
         'id',
         'juegoID',
-        'jugador',
+        'jugadorID',
         'fecha',
         'puntos',
         'segundos',
