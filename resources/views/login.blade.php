@@ -18,7 +18,8 @@
 
             <form method="get" action="{{route('loginUsuario')}}" class="login_form">
                 <label class="edit_label" for="email">Email:</label>
-                <input type="text" name="email" id="email" class="small_text_input">
+                <input type="text" name="email" id="email" class="small_text_input"><br><br>
+
                 <label class="edit_label" for="contrasenia">Contraseña:</label>
                 <input type="text" name="contrasenia" id="contrasenia" class="small_text_input">
 
