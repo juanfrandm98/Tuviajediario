@@ -74,6 +74,13 @@ class UsuarioController extends Controller
                         'rolID' => $rol
                     );
 
+                    if($rol == 4) {
+                        $newUsuario = array(
+                            'alias' => $request->get('alias'),
+                            'nombre_madre' => $request->get('nombre_madre')
+                        );
+                    }
+
                     $newDBEntrance = new Usuario($newUsuario);
                     $newDBEntrance->save();
 
@@ -118,6 +125,13 @@ class UsuarioController extends Controller
         $usuarioID = session('usuarioID');
 
         if(isset($usuarioID)) return view('mainmenu');
+        else return redirect()->route('login');
+    }
+
+    public function goToRegistrarOtroUsuario() {
+        $usuarioID = session('usuarioID');
+
+        if(isset($usuarioID)) return view('registrar_usuario');
         else return redirect()->route('login');
     }
 }

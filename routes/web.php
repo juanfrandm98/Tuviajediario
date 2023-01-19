@@ -37,6 +37,7 @@ Route::get('goToListaAreasCognitivas', [AreaCognitivaController::class, 'goToLis
 Route::get('goToEditarJuego', [JuegoController::class, 'goToEditarJuego'])->name('editar_juego');
 Route::get('goToEditarAreaCognitiva', [AreaCognitivaController::class, 'goToEditarAreaCognitiva'])->name('editar_area');
 Route::get('goToEditarDestino', [DestinoController::class, 'goToEditarDestino'])->name('editar_destino');
+Route::get('goToRegistrarOtroUsuario', [UsuarioController::class, 'goToRegistrarOtroUsuario'])->name('registrar_otro_usuario');
 /**
  * Rutas para los Juegos
  */
