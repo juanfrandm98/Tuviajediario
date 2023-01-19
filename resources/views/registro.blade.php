@@ -23,6 +23,34 @@
                 <label class="edit_label" for="contrasenia">Contraseña:</label>
                 <input type="password" name="contrasenia" id="contrasenia" class="small_text_input"><br><br>
 
+                <label class="edit_label" for="contrasenia2">Repite la contraseña:</label>
+                <input type="password" name="contrasenia2" id="contrasenia2" class="small_text_input"><br><br>
+
+                <label class="edit_label" for="nombre">Nombre completo:</label>
+                <input type="text" name="nombre" id="nombre" class="small_text_input"><br><br>
+
+                <label class="edit_label" for="telefono">Teléfono:</label>
+                <input type="number" name="telefono" id="telefono" class="small_text_input"><br><br>
+
+                <div class="row">
+                    <div class="column2">
+                        <label class="edit_label" for="genero">Género:</label>
+                        <select name="genero" id="genero">
+                            <option value="hombre">Hombre</option>
+                            <option value="mujer">Mujer</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="column2">
+                        <label class="edit_label" for="rol">Rol:</label>
+                        <select name="rol" id="rol">
+                            <option value=2>Tutor</option>
+                            <option value=3>Psicólogo</option>
+                        </select>
+                    </div>
+                </div>
+
                 <button class="button" type="submit">Login</button>
             </form>
 

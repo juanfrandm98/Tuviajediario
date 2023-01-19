@@ -30,9 +30,7 @@ Route::get('/testAlexa', function() {
  */
 Route::get('/', [UsuarioController::class, 'goToLogin'])->name('login');
 Route::get('registro', [UsuarioController::class, 'goToRegistro'])->name('registro');
-Route::get('/mainmenu', function() {
-    return view('mainmenu');
-})->name('mainmenu');
+Route::get('goToMainmenu', [UsuarioController::class, 'goToMainmenu'])->name('mainmenu');
 Route::get('goToListaJuegos', [JuegoController::class, 'goToListaJuegos'])->name('lista_juegos');
 Route::get('goToListaDestinos', [DestinoController::class, 'goToListaDestinos'])->name('lista_destinos');
 Route::get('goToListaAreasCognitivas', [AreaCognitivaController::class, 'goToListaAreasCognitivas'])->name('lista_areas_cognitivas');
