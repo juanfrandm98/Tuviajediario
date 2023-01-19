@@ -83,6 +83,11 @@ class UsuarioController extends Controller
         return back()->with('warning', $message);
     }
 
+    public function cerrarSesion() {
+        $this->emptySession();
+        return redirect()->route('login');
+    }
+
     /**
      * FUNCIONES DE NAVEGACIÓN
      */
@@ -95,6 +100,9 @@ class UsuarioController extends Controller
     }
 
     public function goToMainmenu() {
-        return view('mainmenu');
+        $usuarioID = session('usuarioID');
+
+        if(isset($usuarioID)) return view('mainmenu');
+        else return redirect()->route('login');
     }
 }

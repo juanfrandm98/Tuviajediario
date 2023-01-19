@@ -13,7 +13,7 @@
                 <div class="menu_header">
                     <ul>
                         <li><a href="{{route('mainmenu')}}">Menú Principal</a></li>
-                        <li><a>Cerrar Sesión</a></li>
+                        <li><a href="{{route('cerrarSesion')}}">Cerrar Sesión</a></li>
                     </ul>
                 </div>
             </div>

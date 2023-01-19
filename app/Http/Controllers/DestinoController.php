@@ -118,23 +118,32 @@ class DestinoController extends Controller
      * FUNCIONES DE NAVEGACIÓN
      */
     public function goToListaDestinos() {
-        $lista_destinos = Destino::all();
+        $usuarioID = session('usuarioID');
 
-        return view('lista_destinos', ['lista_destinos' => $lista_destinos]);
+        if(isset($usuarioID)) {
+            $lista_destinos = Destino::all();
+            return view('lista_destinos', ['lista_destinos' => $lista_destinos]);
+        }
+        else return redirect()->route('login');
     }
 
     public function goToEditarDestino(Request $request) {
-        $destinoID = $request->get('destino_id');
+        $usuarioID = session('usuarioID');
 
-        if($destinoID) {
-            $destino = Destino::find($destinoID);
+        if(isset($usuarioID)) {
+            $destinoID = $request->get('destino_id');
 
-            if($destino)
-                return view('editar_destino', ['datos_iniciales' => $destino]);
-            else
-                return view('lista_destinos', ['lista_destinos' => Destino::all()]);
-        } else {
-            return view('editar_destino');
+            if($destinoID) {
+                $destino = Destino::find($destinoID);
+
+                if($destino)
+                    return view('editar_destino', ['datos_iniciales' => $destino]);
+                else
+                    return view('lista_destinos', ['lista_destinos' => Destino::all()]);
+            } else {
+                return view('editar_destino');
+            }
         }
+        else return redirect()->route('login');
     }
 }

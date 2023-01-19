@@ -36,23 +36,32 @@ class AreaCognitivaController extends Controller
      * FUNCIONES DE NAVEGACIÓN
      */
     public function goToListaAreasCognitivas() {
-        $lista_areas = AreaCognitiva::all();
+        $usuarioID = session('usuarioID');
 
-        return view('lista_areas_cognitivas', ['lista_areas' => $lista_areas]);
+        if(isset($usuarioID)) {
+            $lista_areas = AreaCognitiva::all();
+            return view('lista_areas_cognitivas', ['lista_areas' => $lista_areas]);
+        }
+        else return redirect()->route('login');
     }
 
     public function goToEditarAreaCognitiva(Request $request) {
-        $areaID = $request->get('area_id');
+        $usuarioID = session('usuarioID');
 
-        if($areaID) {
-            $area = AreaCognitiva::find($areaID);
+        if(isset($usuarioID)) {
+            $areaID = $request->get('area_id');
 
-            if($area)
-                return view('editar_area', ['datos_iniciales' => $area]);
-            else
-                return view('lista_areas_cognitivas', ['lista_areas' => AreaCognitiva::all()]);
-        } else {
-            return view('editar_area');
+            if($areaID) {
+                $area = AreaCognitiva::find($areaID);
+
+                if($area)
+                    return view('editar_area', ['datos_iniciales' => $area]);
+                else
+                    return view('lista_areas_cognitivas', ['lista_areas' => AreaCognitiva::all()]);
+            } else {
+                return view('editar_area');
+            }
         }
+        else return redirect()->route('login');
     }
 }

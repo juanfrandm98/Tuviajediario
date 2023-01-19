@@ -122,22 +122,31 @@ class JuegoController extends Controller
      * FUNCIONES DE NAVEGACIÓN
      */
     public function goToListaJuegos() {
-        $lista_juegos = Juego::all();
-        $areas_cognitivas = AreaCognitiva::all();
+        $usuarioID = session('usuarioID');
 
-        return view('lista_juegos', ['lista_juegos' => $lista_juegos, 'areas_cognitivas' => $areas_cognitivas]);
+        if(isset($usuarioID)) {
+            $lista_juegos = Juego::all();
+            $areas_cognitivas = AreaCognitiva::all();
+            return view('lista_juegos', ['lista_juegos' => $lista_juegos, 'areas_cognitivas' => $areas_cognitivas]);
+        }
+        else return redirect()->route('login');
     }
 
     public function goToEditarJuego(Request $request) {
-        $juegoID = $request->get('juego_id');
+        $usuarioID = session('usuarioID');
 
-        if($juegoID) {
-            $juego = Juego::find($juegoID);
-            $areas = AreaCognitiva::all();
-            return view('editar_juego', ['datos_iniciales' => $juego, 'areas' => $areas]);
-        } else {
-            return view('lista_juegos', ['lista_juegos' => Juego::all()]);
+        if(isset($usuarioID)) {
+            $juegoID = $request->get('juego_id');
+
+            if($juegoID) {
+                $juego = Juego::find($juegoID);
+                $areas = AreaCognitiva::all();
+                return view('editar_juego', ['datos_iniciales' => $juego, 'areas' => $areas]);
+            } else {
+                return view('lista_juegos', ['lista_juegos' => Juego::all()]);
+            }
         }
+        else return redirect()->route('login');
     }
 
 }
