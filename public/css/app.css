@@ -111,6 +111,11 @@ tr:nth-child(even) {
     background-color: skyblue;
 }
 
+.login_icon {
+    margin: 10px 20px;
+    max-height: 300px;
+}
+
 .login {
     background-color: white;
     border-radius: 10px;
