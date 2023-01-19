@@ -55,23 +55,25 @@ class UsuarioController extends Controller
         $tutor = Usuario::find($idtutor);
         $jugador = Usuario::find($idjugador);
 
-        if(is_null($tutor->tutela)) {
-            $tutor->tutela = array($jugador->id);
-        } else {
-            $oldArray = $tutor->tutela;
-            $tutor->datos_interes = array_merge($oldArray, array($jugador->id));
+        if($tutor && $jugador) {
+            if(is_null($tutor->tutela)) {
+                $tutor->tutela = array($jugador->id);
+            } else {
+                $oldArray = $tutor->tutela;
+                $tutor->datos_interes = array_merge($oldArray, array($jugador->id));
+            }
+
+            $tutor->save();
+
+            if(is_null($jugador->tutela)) {
+                $jugador->tutela = array($tutor->id);
+            } else {
+                $oldArray = $jugador->tutela;
+                $jugador->datos_interes = array_merge($oldArray, array($tutor->id));
+            }
+
+            $jugador->save();
         }
-
-        $tutor->save();
-
-        if(is_null($jugador->tutela)) {
-            $jugador->tutela = array($tutor->id);
-        } else {
-            $oldArray = $jugador->tutela;
-            $jugador->datos_interes = array_merge($oldArray, array($tutor->id));
-        }
-
-        $jugador->save();
     }
 
     public function  registroUsuario(Request $request) {
