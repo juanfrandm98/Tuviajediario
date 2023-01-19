@@ -102,6 +102,48 @@ tr:nth-child(even) {
 }
 
 /**
+        LOGIN
+ */
+
+.login_background {
+    height: 100%;
+    position: relative;
+    background-color: skyblue;
+}
+
+.login {
+    background-color: white;
+    border-radius: 10px;
+    margin: 0;
+    padding: 10px 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.login h1 {
+    color: #e09e2a;
+    font-family: 'Courier New', serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.login h2 {
+    color: #e09e2a;
+    font-family: 'Courier New', serif;
+    font-size: 30px;
+}
+
+.login_form {
+    max-width: min-content;
+    min-width: 500px;
+    text-align: center;
+}
+
+/**
         MAIN MENU
  */
 
