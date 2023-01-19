@@ -21,7 +21,7 @@ class CreateUsuariosTable extends Migration
             $table->string('nombre');
             $table->string('telefono');
             $table->enum('genero', ['hombre', 'mujer', 'otro']);
-            $table->integer('tipoUsuario');
+            $table->integer('rolID');
             $table->json('tutela')->nullable();
             $table->json('gestiona')->nullable();
             $table->string('alias');
