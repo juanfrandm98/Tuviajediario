@@ -6,6 +6,7 @@ use App\Http\Controllers\JuegoController;
 use App\Http\Controllers\ResultadoController;
 use App\Http\Controllers\DestinoController;
 use App\Http\Controllers\AreaCognitivaController;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\RolController;
 
 /*
@@ -62,6 +63,10 @@ Route::get('getRandomDestino', [DestinoController::class, 'getRandomDestino']);
  * Rutas para las Áreas Cognitivas
  */
 Route::get('editAreaCognitiva', [AreaCognitivaController::class, 'editAreaCognitiva'])->name('editAreaCognitiva');
+/**
+ *  Rutas para los Usuarios
+ */
+Route::get('loginUsuario', [UsuarioController::class, 'loginUsuario']);
 /**
  * Rutas para los Roles
  */
