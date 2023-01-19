@@ -10,6 +10,13 @@ class Rol extends Model
     use HasFactory;
 
     /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'roles';
+
+    /**
      * The attributes that are mass asignable.
      *
      * @var array
