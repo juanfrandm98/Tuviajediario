@@ -28,12 +28,11 @@ Route::get('/testAlexa', function() {
 /**
  * Rutas para la página web
  */
+Route::get('/', [UsuarioController::class, 'goToLogin'])->name('login');
+Route::get('registro', [UsuarioController::class, 'goToRegistro'])->name('registro');
 Route::get('/mainmenu', function() {
     return view('mainmenu');
 })->name('mainmenu');
-Route::get('/', function () {
-    return view('login');
-})->name('login');
 Route::get('goToListaJuegos', [JuegoController::class, 'goToListaJuegos'])->name('lista_juegos');
 Route::get('goToListaDestinos', [DestinoController::class, 'goToListaDestinos'])->name('lista_destinos');
 Route::get('goToListaAreasCognitivas', [AreaCognitivaController::class, 'goToListaAreasCognitivas'])->name('lista_areas_cognitivas');
@@ -67,6 +66,7 @@ Route::get('editAreaCognitiva', [AreaCognitivaController::class, 'editAreaCognit
  *  Rutas para los Usuarios
  */
 Route::get('loginUsuario', [UsuarioController::class, 'loginUsuario'])->name('loginUsuario');
+Route::get('registroUsuario', [UsuarioController::class, 'registroUsuario'])->name('registroUsuario');
 /**
  * Rutas para los Roles
  */

@@ -1,6 +1,6 @@
 @extends('base_login')
 
-@section('titulo', 'Login')
+@section('titulo', 'Nuevo usuario')
 
 @section('contenido')
     <div class="login_background">
@@ -9,14 +9,14 @@
 
             <h1>Tu Viaje Diario</h1>
 
-            <h2>LOGIN</h2>
+            <h2>Registro</h2>
 
             <div>
                 @include('flash-message')
                 @yield('content')
             </div>
 
-            <form method="get" action="{{route('loginUsuario')}}" class="login_form">
+            <form method="get" action="{{route('registroUsuario')}}" class="login_form">
                 <label class="edit_label" for="email">Email:</label>
                 <input type="text" name="email" id="email" class="small_text_input"><br><br>
 
@@ -26,7 +26,7 @@
                 <button class="button" type="submit">Login</button>
             </form>
 
-            <a href="{{route('registro')}}" class="enlace">¿Aún no formas parte del sistema? ¡Regístrate!</a>
+            <a href="{{route('login')}}" class="enlace">¿Ya estás registrado? ¡Haz login!</a>
         </div>
     </div>
 @endsection
