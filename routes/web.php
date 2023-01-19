@@ -67,7 +67,6 @@ Route::get('editAreaCognitiva', [AreaCognitivaController::class, 'editAreaCognit
 Route::get('loginUsuario', [UsuarioController::class, 'loginUsuario'])->name('loginUsuario');
 Route::get('registroUsuario', [UsuarioController::class, 'registroUsuario'])->name('registroUsuario');
 Route::get('cerrarSesion', [UsuarioController::class, 'cerrarSesion'])->name('cerrarSesion');
-Route::get('addTutelaa', [UsuarioController::class, 'addTutelaa'])->name('addTutelaa');
 /**
  * Rutas para los Roles
  */

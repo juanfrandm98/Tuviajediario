@@ -46,21 +46,17 @@ class UsuarioController extends Controller
         session()->forget('usuarioRolID');
     }
 
-    public function  addTutelaa(Request $request) {
-        $this->addTutela($request->get('tutor'), $request->get('jugador'));
-        return redirect()->route('mainmenu');
-    }
-
     private function addTutela($idtutor, $idjugador) {
-        $tutor = Usuario::find(1);
-        $jugador = Usuario::find(2);
+        $tutor = Usuario::find($idtutor);
+        $jugador = Usuario::find($idjugador);
 
         if($tutor && $jugador) {
             if(is_null($tutor->tutela)) {
                 $tutor->tutela = array($jugador->id);
             } else {
                 $oldArray = $tutor->tutela;
-                $tutor->datos_interes = array_merge($oldArray, array($jugador->id));
+                $tutor->tutela = array_merge($oldArray, array($jugador->id));
+                $tutor->tutela = array_unique($tutor->tutela);
             }
 
             $tutor->save();
@@ -69,7 +65,8 @@ class UsuarioController extends Controller
                 $jugador->tutela = array($tutor->id);
             } else {
                 $oldArray = $jugador->tutela;
-                $jugador->datos_interes = array_merge($oldArray, array($tutor->id));
+                $jugador->tutela = array_merge($oldArray, array($tutor->id));
+                $jugador->tutela = array_unique($jugador->tutela);
             }
 
             $jugador->save();
