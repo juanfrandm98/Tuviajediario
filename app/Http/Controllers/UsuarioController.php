@@ -8,9 +8,24 @@ use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
-    public function loginUsuario(Request $request)
-    {
+    public function loginUsuario(Request $request){
+        $email = $request->get('email');
+        $contrasenia = $request->get('contrasenia');
 
+        if($usuario = Usuario::where('email', $email)->first()) {
+            if(Hash::check($contrasenia, $usuario->contrasenia)) {
+                if($usuario->rolID != 4) {
+                    $this->setSesion($usuario->id, $usuario->rolID);
+                    return redirect()->route('mainmenu');
+                } else {
+                    return back()->with('warning', 'No tiene los permisos necesarios para entrar en esta web.');
+                }
+            } else {
+                return back()->with('warning', 'Contraseña incorrecta.');
+            }
+        } else {
+            return back()->with('warning', 'No existe ningún usuario con ese email.');
+        }
     }
 
     private function comprobarNuevaContrasenia($c1, $c2) {
