@@ -54,7 +54,7 @@ class ResultadoController extends Controller
             $jugadores = Usuario::whereIn('id', $tutor->tutela)->get();
             $juegos = Juego::all();
             $resultados = Resultado::whereIn('jugadorID', $tutor->tutela)->orderBy('jugadorID', 'ASC')
-                ->orderBy('fecha', 'ASC')->orderBy('juegoID', 'ASC')->get();
+                ->orderBy('juegoID', 'ASC')->orderBy('fecha', 'ASC')->get();
             return view('lista_resultados', ['resultados' => $resultados, 'jugadores' => $jugadores, 'juegos' => $juegos]);
         }
         else return redirect()->route('login');
