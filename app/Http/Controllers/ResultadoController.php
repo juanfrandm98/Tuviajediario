@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 use App\Models\Resultado;
 use App\Models\Juego;
@@ -43,5 +44,16 @@ class ResultadoController extends Controller
         }
 
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
+    }
+
+    public function goToListaResultados(Request $request) {
+        $usuarioID = session('usuarioID');
+
+        if(isset($usuarioID)) {
+            $tutor = Usuario::find($usuarioID);
+            $resultados = Resultado::whereIn('jugadorID', $tutor->tutela)->orderBy('jugadorID', 'ASC')->orderBy('fecha', 'ASC')->get();
+            return view('lista_resultados', ['resultados' => $resultados]);
+        }
+        else return redirect()->route('login');
     }
 }
