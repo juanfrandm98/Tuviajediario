@@ -22,7 +22,13 @@
                 @if(!empty($resultados))
                     @foreach($resultados as $resultado)
                         <tr>
-                            <td>{{ucfirst($resultado->jugadorID)}}</td>
+                            <td>
+                                @foreach($jugadores as $jugador)
+                                    @if($resultado->jugadorID == $jugador->id)
+                                        {{ucfirst($jugador->nombre)}}
+                                    @endif
+                                @endforeach
+                            </td>
                             <td>{{ucfirst($resultado->juegoID)}}</td>
                             <td>{{ucfirst($resultado->puntos)}}</td>
                             <td>{{ucfirst($resultado->segundos)}}</td>
