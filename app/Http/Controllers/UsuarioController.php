@@ -28,6 +28,30 @@ class UsuarioController extends Controller
         }
     }
 
+    public function loginSkill(Request $request) {
+        $email = $request->get('email');
+        $message = 'El email de su dispositivo no se ha enviado correctamente.';
+        $statusCode = 409;
+
+        if($email) {
+            if($usuario = Usuario::where('email', $email)->first()) {
+                if($usuario->rolID == 4) {
+                    $statusCode = 200;
+                    return response()->json([
+                        'jugadorID' => $usuario->id,
+                        'nombre' => $usuario->alias
+                    ], $statusCode);
+                } else {
+                    $message = 'Lo siento, la skill es solo para jugadores. Inicie sesión en el dispositivo con el email de un jugador.';
+                }
+            } else {
+                $message = 'No existe ningún jugador con ese email. Por favor, pide a un tutor que te registre desde la web tuviajediario punto es.';
+            }
+        }
+
+        return response($message, $statusCode)->header('Content-Type', 'text/plain');
+    }
+
     private function comprobarNuevaContrasenia($c1, $c2) {
         if(strlen($c1) < 8)
             return 'Su contraseña debe tener, al menos, 8 caracteres.';
