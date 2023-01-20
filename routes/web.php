@@ -49,7 +49,6 @@ Route::get('getAudioCampanada', [JuegoController::class, 'getAudioCampanada']);
  * Rutas para los Resultados
  */
 Route::get('addResultado', [ResultadoController::class, 'addResultado']);
-Route::get('addResultado2', [ResultadoController::class, 'addResultado2']);
 /**
  * Rutas para los Destinos
  */
