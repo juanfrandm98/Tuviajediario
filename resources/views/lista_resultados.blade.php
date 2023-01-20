@@ -29,7 +29,13 @@
                                     @endif
                                 @endforeach
                             </td>
-                            <td>{{ucfirst($resultado->juegoID)}}</td>
+                            <td>
+                                @foreach($juegos as $juego)
+                                    @if($resultado->juegoID == $juego->id)
+                                        {{ucfirst($juego->nombre)}}
+                                    @endif
+                                @endforeach
+                            </td>
                             <td>{{ucfirst($resultado->puntos)}}</td>
                             <td>{{ucfirst($resultado->segundos)}}</td>
                             <td>{{ucfirst($resultado->aviso)}}</td>
