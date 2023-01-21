@@ -62,7 +62,9 @@ class UsuarioController extends Controller
     }
 
     private function setSesion($usuarioID, $usuarioRolID) {
-        session(['usuarioID' => $usuarioID, 'usuarioRolID' => $usuarioRolID]);
+        session(['usuarioID' => $usuarioID]);
+        session(['usuarioRolID' => $usuarioRolID]);
+
     }
 
     private function emptySession() {
