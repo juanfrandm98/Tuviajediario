@@ -27,7 +27,7 @@
                             <td>{{$resultado->puntos}}</td>
                             <td>{{$resultado->segundos}}</td>
                             @if($resultado->aviso)
-                                <td>SI</td>
+                                <td class="celda_aviso">SI</td>
                             @else
                                 <td>No</td>
                             @endif

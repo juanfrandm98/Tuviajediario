@@ -251,3 +251,10 @@ tr:nth-child(even) {
     float: right;
     margin: 20px auto;
 }
+
+/**
+        LISTA DE RESULTADOS
+ */
+.celda_aviso {
+    background-color: red;
+}
