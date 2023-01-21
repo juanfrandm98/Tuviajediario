@@ -15,7 +15,7 @@
                     <th>Juego</th>
                     <th>Puntos</th>
                     <th>Tiempo (segundos)</th>
-                    <th>Aviso</th>
+                    <th>¿Necesitaría seguimiento?</th>
                     <th>Fecha</th>
                 </tr>
 
