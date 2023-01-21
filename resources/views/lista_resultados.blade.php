@@ -22,24 +22,16 @@
                 @if(!empty($resultados))
                     @foreach($resultados as $resultado)
                         <tr>
-                            <td>
-                                @foreach($jugadores as $jugador)
-                                    @if($resultado->jugadorID == $jugador->id)
-                                        {{ucfirst($jugador->nombre)}}
-                                    @endif
-                                @endforeach
-                            </td>
-                            <td>
-                                @foreach($juegos as $juego)
-                                    @if($resultado->juegoID == $juego->id)
-                                        {{ucfirst($juego->nombre)}}
-                                    @endif
-                                @endforeach
-                            </td>
-                            <td>{{ucfirst($resultado->puntos)}}</td>
-                            <td>{{ucfirst($resultado->segundos)}}</td>
-                            <td>{{ucfirst($resultado->aviso)}}</td>
-                            <td>{{ucfirst($resultado->fecha)}}</td>
+                            <td>{{$jugadores[$resultado->jugadorID]}}</td>
+                            <td>{{$juegos[$resultado->juegoID]}}</td>
+                            <td>{{$resultado->puntos}}</td>
+                            <td>{{$resultado->segundos}}</td>
+                            @if($resultado->aviso)
+                                <td>SI</td>
+                            @else
+                                <td>No</td>
+                            @endif
+                            <td>{{$resultado->fecha}}</td>
                         </tr>
                     @endforeach
                 @endif

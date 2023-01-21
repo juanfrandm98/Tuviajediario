@@ -53,10 +53,22 @@ class ResultadoController extends Controller
             $tutor = Usuario::find($usuarioID);
             $jugadores = Usuario::whereIn('id', $tutor->tutela)->get();
             $juegos = Juego::all();
+
+            $nombresJugadores = [];
+            foreach ($jugadores as $jugador) {
+                $nombresJugadores[$jugador->id] = $jugador->nombre;
+            }
+
+            $nombresJuegos = [];
+            foreach ($juegos as $juego) {
+                $nombresJuegos[$juego->id] = $juego->nombre;
+            }
+
             $resultados = Resultado::whereIn('jugadorID', $tutor->tutela)->orderBy('jugadorID', 'ASC')
                 ->orderBy('juegoID', 'ASC')->orderBy('fecha', 'ASC')->get();
-            return view('lista_resultados', ['resultados' => $resultados, 'jugadores' => $jugadores, 'juegos' => $juegos]);
+            return view('lista_resultados', ['resultados' => $resultados, 'jugadores' => $nombresJugadores, 'juegos' => $nombresJuegos]);
         }
-        else return redirect()->route('login');
+
+        return redirect()->route('login');
     }
 }
