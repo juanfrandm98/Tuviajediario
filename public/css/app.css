@@ -205,7 +205,6 @@ tr:nth-child(even) {
 }
 
 .tabla_juegos {
-    float: left;
     margin: 20px auto;
 }
 
