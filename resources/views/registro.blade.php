@@ -27,9 +27,9 @@
                 <input type="password" name="contrasenia2" id="contrasenia2" class="small_text_input"><br><br>
 
                 <label class="edit_label" for="nombre">Nombre completo:</label>
-                <input type="text" name="nombre" id="nombre" class="small_text_input"><br><br><br>
+                <input type="text" name="nombre" id="nombre" class="small_text_input"><br><br>
 
-                <label class="edit_label" for="telefono">Teléfono:</label>
+                <label class="edit_label" for="telefono">Teléfono:</label><br>
                 <input type="number" name="telefono" id="telefono" class="small_text_input"><br><br>
 
                 <div class="row">
