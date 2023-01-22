@@ -29,7 +29,7 @@
                 <label class="edit_label" for="nombre">Nombre completo:</label>
                 <input type="text" name="nombre" id="nombre" class="small_text_input"><br><br><br>
 
-                <label class="edit_label" for="telefono">Teléfono:</label><br><br>
+                <label class="edit_label" for="telefono">Teléfono:</label><br>
                 <input type="number" name="telefono" id="telefono" class="small_text_input"><br><br>
 
                 <div class="row">
