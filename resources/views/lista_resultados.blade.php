@@ -32,6 +32,23 @@
                                 <td>No</td>
                             @endif
                             <td>{{$resultado->fecha}}</td>
+
+                            @if($userRolID == 1 || $userRolID == 3)
+                                <td>
+                                    <form method="get" action="{{route('editar_juego')}}">
+                                        <input type="hidden" id="resultado_fecha" name="resultado_fecha" value="{{$resultado->fecha}}">
+                                        <input type="hidden" id="resultado_jugador_id" name="resultado_jugador_id" value="{{$resultado->jugadorID}}">
+                                        <input type="hidden" id="resultado_id" name="resultado_id" value="{{$resultado->id}}">
+                                        <button type="submit">
+                                            @if($resultado->aviso)
+                                                Desactivar aviso
+                                            @else
+                                                Activar aviso
+                                            @endif
+                                        </button>
+                                    </form>
+                                </td>
+                            @endif
                         </tr>
                     @endforeach
                 @endif
