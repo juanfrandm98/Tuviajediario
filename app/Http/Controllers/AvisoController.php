@@ -14,10 +14,12 @@ class AvisoController extends Controller
             $lista_avisos = [];
             $tutor = Usuario::find('usuarioID');
 
-            foreach ($tutor->avisos as $avisoID) {
-                $aviso = Aviso::find($avisoID);
-                if($aviso->activo)
-                    $lista_avisos[$avisoID] = $aviso;
+            if($tutor->avisos) {
+                foreach ($tutor->avisos as $avisoID) {
+                    $aviso = Aviso::find($avisoID);
+                    if($aviso->activo)
+                        $lista_avisos[$avisoID] = $aviso;
+                }
             }
 
             return view('lista_avisos', ['avisos' => $lista_avisos]);
