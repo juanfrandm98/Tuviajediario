@@ -14,7 +14,7 @@ class AddAvisosToUsuarios extends Migration
     public function up()
     {
         Schema::table('usuarios', function (Blueprint $table) {
-            //
+            $table->json('avisos')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class AddAvisosToUsuarios extends Migration
     public function down()
     {
         Schema::table('usuarios', function (Blueprint $table) {
-            //
+            $table->dropColumn('avisos');
         });
     }
 }
