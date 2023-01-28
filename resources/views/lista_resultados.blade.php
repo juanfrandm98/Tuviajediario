@@ -33,7 +33,7 @@
                             @endif
                             <td>{{$resultado->fecha}}</td>
 
-                            @if(session($usuarioRolID) == 1 || session($usuarioRolID) == 3)
+                            @if(session('usuarioRolID') == 1 || session('usuarioRolID') == 3)
                                 <td>
                                     <form method="get" action="{{route('editar_juego')}}">
                                         <input type="hidden" id="resultado_fecha" name="resultado_fecha" value="{{$resultado->fecha}}">
