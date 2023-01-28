@@ -8,6 +8,7 @@ use App\Http\Controllers\DestinoController;
 use App\Http\Controllers\AreaCognitivaController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\RolController;
+use App\Http\Controllers\AvisoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,15 +31,16 @@ Route::get('/testAlexa', function() {
  */
 Route::get('/', [UsuarioController::class, 'goToLogin'])->name('login');
 Route::get('registro', [UsuarioController::class, 'goToRegistro'])->name('registro');
-Route::get('goToMainmenu', [UsuarioController::class, 'goToMainmenu'])->name('mainmenu');
-Route::get('goToListaJuegos', [JuegoController::class, 'goToListaJuegos'])->name('lista_juegos');
-Route::get('goToListaDestinos', [DestinoController::class, 'goToListaDestinos'])->name('lista_destinos');
-Route::get('goToListaAreasCognitivas', [AreaCognitivaController::class, 'goToListaAreasCognitivas'])->name('lista_areas_cognitivas');
-Route::get('goToEditarJuego', [JuegoController::class, 'goToEditarJuego'])->name('editar_juego');
-Route::get('goToEditarAreaCognitiva', [AreaCognitivaController::class, 'goToEditarAreaCognitiva'])->name('editar_area');
-Route::get('goToEditarDestino', [DestinoController::class, 'goToEditarDestino'])->name('editar_destino');
-Route::get('goToRegistrarOtroUsuario', [UsuarioController::class, 'goToRegistrarOtroUsuario'])->name('registrar_otro_usuario');
-Route::get('goToListaResultados', [ResultadoController::class, 'goToListaResultados'])->name('lista_resultados');
+Route::get('mainmenu', [UsuarioController::class, 'goToMainmenu'])->name('mainmenu');
+Route::get('listaJuegos', [JuegoController::class, 'goToListaJuegos'])->name('lista_juegos');
+Route::get('listaDestinos', [DestinoController::class, 'goToListaDestinos'])->name('lista_destinos');
+Route::get('listaAreasCognitivas', [AreaCognitivaController::class, 'goToListaAreasCognitivas'])->name('lista_areas_cognitivas');
+Route::get('editarJuego', [JuegoController::class, 'goToEditarJuego'])->name('editar_juego');
+Route::get('editarAreaCognitiva', [AreaCognitivaController::class, 'goToEditarAreaCognitiva'])->name('editar_area');
+Route::get('editarDestino', [DestinoController::class, 'goToEditarDestino'])->name('editar_destino');
+Route::get('registrarOtroUsuario', [UsuarioController::class, 'goToRegistrarOtroUsuario'])->name('registrar_otro_usuario');
+Route::get('listaResultados', [ResultadoController::class, 'goToListaResultados'])->name('lista_resultados');
+Route::get('listaAvisos', [AvisoController::class, 'goToListaAvisos'])->name('lista_avisos');
 /**
  * Rutas para los Juegos
  */

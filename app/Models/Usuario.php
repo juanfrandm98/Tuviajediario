@@ -27,7 +27,8 @@ class Usuario extends Model
         'alias',
         'nombre_madre',
         'resultados',
-        'ultimos_viajes'
+        'ultimos_viajes',
+        'avisos'
     ];
 
     // Tell Laravel to fetch text values and set them as arrays
@@ -35,6 +36,7 @@ class Usuario extends Model
         'tutela' => 'array',
         'gestiona' => 'array',
         'resultados' => 'array',
-        'ultimos_viajes' => 'array'
+        'ultimos_viajes' => 'array',
+        'avisos' => 'array'
     ];
 }
