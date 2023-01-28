@@ -14,7 +14,7 @@ class AvisoController extends Controller
             $lista_avisos = [];
             $tutor = Usuario::find('usuarioID');
 
-            if(!is_null($tutor->avisos)) {
+            if(isset($tutor->avisos)) {
                 foreach ($tutor->avisos as $avisoID) {
                     $aviso = Aviso::find($avisoID);
                     if($aviso->activo)
