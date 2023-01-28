@@ -13,16 +13,9 @@ class CreateAvisosTable extends Migration
      */
     public function up()
     {
-        Schema::create('avisos', function (Blueprint $table) {
+        Schema::create('_avisos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('jugadorID');
-            $table->integer('resultadoID');
-            $table->json('areas_cognitivas')->nullable();
-            $table->dateTime('fecha');
-            $table->boolean('automatico')->default(true);
-            $table->boolean('leido')->default(false);
-            $table->boolean('activo')->default(true);
         });
     }
 
@@ -33,6 +26,6 @@ class CreateAvisosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('avisos');
+        Schema::dropIfExists('_avisos');
     }
 }
