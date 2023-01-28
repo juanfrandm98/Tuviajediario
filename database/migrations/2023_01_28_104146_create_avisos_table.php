@@ -25,7 +25,7 @@ class CreateAvisosTable extends Migration
             $table->boolean('activo')->default(true);
         });
 
-        Schema::table('usuarios', function (Blueprint $table) {
+        Schema::table('usuarios', function ($table) {
             $table->json('avisos')->nullable();
         });
 
@@ -39,5 +39,9 @@ class CreateAvisosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('avisos');
+
+        Schema::table('usuarios', function ($table) {
+            $table->dropColumn('avisos');
+        });
     }
 }
