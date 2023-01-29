@@ -56,7 +56,7 @@ class AvisoController extends Controller
 
         if(isset($usuarioID)) {
             $lista_avisos = [];
-            $tutor = Usuario::find('usuarioID');
+            $tutor = Usuario::find($usuarioID);
 
             if(isset($tutor->avisos)) {
                 foreach ($tutor->avisos as $avisoID) {
@@ -66,8 +66,7 @@ class AvisoController extends Controller
                 }
             }
 
-            dd($tutor);
-            //return view('lista_avisos', ['avisos' => $lista_avisos]);
+            return view('lista_avisos', ['avisos' => $lista_avisos]);
         }
 
         return redirect()->route('login');
