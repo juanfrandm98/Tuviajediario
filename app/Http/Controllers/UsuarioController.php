@@ -189,21 +189,20 @@ class UsuarioController extends Controller
             $contador = 0;
 
             if(isset($usuario->avisos)) {
-                foreach ($usuario->avisos as $avisoID)
+                foreach ($usuario->avisos as $avisoID) {
                     $aviso = Aviso::find($avisoID);
 
                     if($aviso->activo && !$aviso->leido) {
                         $jugador = Usuario::find($aviso->jugadorID);
                         array_push($nombres_avisos, $jugador->nombre);
                         array_push($avisos, $avisoID);
-                        $contador++;
                     }
-
-                    if(count($nombres_avisos) > 1)
-                        $nombres_avisos = array_unique($nombres_avisos);
+                }
+                if(count($nombres_avisos) > 1)
+                    $nombres_avisos = array_unique($nombres_avisos);
             }
-            dd($contador);
-            //return view('mainmenu', ['nombres_avisos' => $nombres_avisos, 'avisos' => $avisos]);
+
+            return view('mainmenu', ['nombres_avisos' => $nombres_avisos, 'avisos' => $avisos]);
         }
 
         return redirect()->route('login');
