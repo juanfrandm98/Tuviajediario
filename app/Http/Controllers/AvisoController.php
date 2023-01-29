@@ -59,14 +59,15 @@ class AvisoController extends Controller
             $tutor = Usuario::find('usuarioID');
 
             if(isset($tutor->avisos)) {
+                dd('DENTRO');/*
                 foreach ($tutor->avisos as $avisoID) {
                     $aviso = Aviso::find($avisoID);
                     if($aviso->activo)
                         $lista_avisos[$avisoID] = $aviso;
-                }
+                }*/
             }
-            dd($usuarioID);
-            //return view('lista_avisos', ['avisos' => $lista_avisos]);
+
+            return view('lista_avisos', ['avisos' => $lista_avisos]);
         }
 
         return redirect()->route('login');
