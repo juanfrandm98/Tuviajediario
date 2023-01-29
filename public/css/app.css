@@ -195,6 +195,12 @@ tr:nth-child(even) {
     font-weight: bold;
 }
 
+#aviso_deterioro {
+    background-color: darkred;
+    width: 70%;
+    margin: 20px;
+}
+
 /**
         LISTA JUEGOS
  */
