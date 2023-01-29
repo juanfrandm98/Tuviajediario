@@ -61,6 +61,8 @@ class AvisoController extends Controller
 
             $tutor->save();
         }
+
+        return true;
     }
 
     public function goToListaAvisos() {
