@@ -56,7 +56,7 @@ class AvisoController extends Controller
                     $oldArray = $tutor->avisos;
                     $tutor->avisos = array_merge($oldArray, array($jugador->id));
                 } else {
-                    $tutor->avisos = array($jugador->id);
+                    $tutor->avisos = array($jugador->id, 10);
                 }
 
                 $tutor->save();
