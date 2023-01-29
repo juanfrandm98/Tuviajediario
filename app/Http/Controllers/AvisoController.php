@@ -10,7 +10,6 @@ use App\Models\Usuario;
 class AvisoController extends Controller
 {
     public static function addAviso($resultadoID, $automatico) {
-        /*
         $resultado = Resultado::find($resultadoID);
         $juego = Juego::find($resultado->juegoID);
 
@@ -33,7 +32,9 @@ class AvisoController extends Controller
             $jugador = Usuario::find($resultado->jugadorID);
             $avisoID = Array($aviso->id);
 
-            foreach ($jugador->tutela as $tutor) {
+            foreach ($jugador->tutela as $tutorID) {
+                $tutor = Usuario::find($tutorID);
+
                 if(is_null($tutor->avisos)) {
                     $tutor->avisos = $avisoID;
                 } else {
@@ -44,24 +45,10 @@ class AvisoController extends Controller
             }
 
             return true;
-        } else
-            return false;*/
-
-        $resultado = Resultado::find($resultadoID);
-        $jugador = Usuario::find($resultado->jugadorID);
-
-        if(isset($resultado) && isset($jugador)) {
-            foreach ($jugador->tutela as $tutorID) {
-                $tutor = Usuario::find($tutorID);
-                dd(gettype($tutor->avisos));
-                //$tutor->avisos = json_encode([$jugador->id]);
-                //$tutor->save();
-            }
-
-            return true;
         }
 
         return false;
+
     }
 
     public function goToListaAvisos() {
