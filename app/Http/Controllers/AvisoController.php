@@ -49,7 +49,7 @@ class AvisoController extends Controller
 
         $resultado = Resultado::find($resultadoID);
         $jugador = Usuario::find($resultado->jugadorID);
-        $avisoID = Array(10);
+        $avisoID = array(10);
 
         foreach ($jugador->tutela as $tutor) {
             if(isset($tutor->avisos)) {
