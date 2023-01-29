@@ -198,7 +198,7 @@ tr:nth-child(even) {
 #aviso_deterioro {
     background-color: darkred;
     width: 70%;
-    margin: 20px;
+    margin: auto;
 }
 
 /**
