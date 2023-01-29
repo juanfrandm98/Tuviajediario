@@ -81,7 +81,7 @@ class AvisoController extends Controller
                                 $oldArray = $nombre_areas[$avisoID];
                                 $nombre_areas[$avisoID] = array_merge($oldArray, [$areas[$areaID]->nombre]);
                             } else {
-                                $nombre_areas[$aviso->id] = $areas[$areaID]->nombre;
+                                $nombre_areas[$aviso->id] = [$areas[$areaID]->nombre];
                             }
                         }
                 }
