@@ -28,9 +28,22 @@ class AvisoController extends Controller
         $newDBEntrance = new Aviso($newAviso);
         $newDBEntrance->save();
 
-        if($aviso = Aviso::where('resultadoID', $resultadoID)->first())
+        if($aviso = Aviso::where('resultadoID', $resultadoID)->first()) {
+            $jugador = Usuario::find($resultado->jugadorID);
+            $avisoID = Array($aviso->id);
+
+            foreach ($jugador->tutor as $tutor) {
+                if(is_null($tutor->avisos)) {
+                    $tutor->avisos = $avisoID;
+                } else {
+                    $oldArray = $tutor->avisos;
+                    $tutor->avisos = array_merge($oldArray, $avisoID);
+                }
+                $tutor->save();
+            }
+
             return true;
-        else
+        } else
             return false;
     }
 
