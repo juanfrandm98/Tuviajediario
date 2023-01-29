@@ -51,7 +51,8 @@ class AvisoController extends Controller
         $jugador = Usuario::find($resultado->jugadorID);
 
         if(isset($resultado) && isset($jugador)) {
-            foreach ($jugador->tutela as $tutor) {
+            foreach ($jugador->tutela as $tutorID) {
+                $tutor = Usuario::find($tutorID);
                 dd(gettype($tutor->avisos));
                 //$tutor->avisos = json_encode([$jugador->id]);
                 //$tutor->save();
