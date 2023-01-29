@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aviso;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -187,7 +188,9 @@ class UsuarioController extends Controller
             $avisos = [];
 
             if(isset($usuario->avisos)) {
-                foreach ($usuario->avisos as $aviso)
+                foreach ($usuario->avisos as $avisoID)
+                    $aviso = Aviso::find($avisoID);
+
                     if($aviso->activo && !$aviso->leido) {
                         $jugador = Usuario::find($aviso->jugadorID);
                         $nombres_avisos[$aviso->id] = [$jugador->nombre];
