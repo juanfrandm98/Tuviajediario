@@ -13,11 +13,13 @@ class AvisoController extends Controller
         $resultado = Resultado::find($resultadoID);
         $juego = Juego::find($resultado->juegoID);
 
+        $now = date_create()->format('Y-m-d H:i:s');
+
         $newAviso = array(
             'jugadorID' => $resultado->jugadorID,
             'resultadoID' => $resultadoID,
             'areas_cognitivas' => $juego->areas_cognitivas,
-            'fecha' => date("Y-m-d H:i:s"),
+            'fecha' => $now,
             'automatico' => $automatico,
             'leido' => false,
             'activo' => true
