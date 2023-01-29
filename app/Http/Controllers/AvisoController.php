@@ -54,9 +54,9 @@ class AvisoController extends Controller
         foreach ($jugador->tutela as $tutor) {
             if(isset($tutor->avisos)) {
                 $oldArray = $tutor->avisos;
-                $tutor->avisos = array_merge($oldArray, array(10));
+                $tutor->avisos = array_merge($oldArray, array($jugador->id));
             } else {
-                $tutor->avisos = array(10);
+                $tutor->avisos = array($jugador->id);
             }
 
             $tutor->save();
