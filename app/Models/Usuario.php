@@ -10,7 +10,7 @@ class Usuario extends Model
     use HasFactory;
 
     /**
-     * The attributes that are mass asignable.
+     * The attributes that are mass asignable. Probando
      *
      * @var array
      */
