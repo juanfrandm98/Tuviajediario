@@ -18,7 +18,7 @@
 
                 <ul>
                     @foreach($nombres_avisos as $nombre)
-                        <li>{{$nombre}}</li>
+                        <li>{{ucfirst($nombre)}}</li>
                     @endforeach
                 </ul>
 
