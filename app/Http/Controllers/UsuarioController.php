@@ -193,7 +193,7 @@ class UsuarioController extends Controller
 
                     if($aviso->activo && !$aviso->leido) {
                         $jugador = Usuario::find($aviso->jugadorID);
-                        $nombres_avisos[$aviso->id] = [$jugador->nombre];
+                        $nombres_avisos[$aviso->id] = $jugador->nombre;
                         $avisos[$aviso->id] = $aviso->id;
                     }
             }
