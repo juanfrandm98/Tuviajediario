@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Aviso;
 use App\Models\Usuario;
 use Illuminate\Http\Request;
 use App\Models\Resultado;
@@ -56,7 +57,14 @@ class ResultadoController extends Controller
             $resultado->aviso = $nuevo_estado_aviso;
             $resultado->save();
 
-            //if($nuevo_estado_aviso)
+            if($aviso = Aviso::where('resultadoID', $resultadoID)->first()) {
+                $aviso->activo = !$aviso->activo;
+                $aviso->save();
+                $resultado->save();
+            } else {
+                if(AvisoController::addAviso($resultadoID, false))
+                    $resultado->save();
+            }
         }
 
         return $this->goToListaResultados($request);
