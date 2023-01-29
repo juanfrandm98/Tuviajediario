@@ -200,7 +200,7 @@ class UsuarioController extends Controller
                     if(count($nombres_avisos) > 1)
                         $nombres_avisos = array_unique($nombres_avisos);
             }
-            dd($avisos);
+            dd($nombres_avisos);
             //return view('mainmenu', ['nombres_avisos' => $nombres_avisos, 'avisos' => $avisos]);
         }
 
