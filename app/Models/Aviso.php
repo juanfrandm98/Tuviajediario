@@ -24,4 +24,9 @@ class Aviso extends Model
         'leido',
         'activo'
     ];
+
+    // Tell Laravel to fetch text values and set them as arrays
+    protected $casts = [
+        'areas_cognitivas' => 'array'
+    ];
 }
