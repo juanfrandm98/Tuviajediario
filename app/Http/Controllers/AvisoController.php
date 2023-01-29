@@ -51,16 +51,10 @@ class AvisoController extends Controller
         $jugador = Usuario::find($resultado->jugadorID);
 
         if(isset($resultado) && isset($jugador)) {
-            foreach ($jugador->tutela as $tutor) {
-                if(isset($tutor->avisos)) {
-                    $oldArray = $tutor->avisos;
-                    $tutor->avisos = array_merge($oldArray, array($jugador->id));
-                } else {
-                    $tutor->avisos = array($jugador->id, 10);
-                }
+            foreach ($jugador->tutela as $tutor)
+                $tutor->avisos[] = [$jugador->id];
 
-                $tutor->save();
-            }
+            $tutor->save();
 
             return true;
         }
