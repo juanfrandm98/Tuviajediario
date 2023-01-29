@@ -65,7 +65,7 @@ class AvisoController extends Controller
                         $lista_avisos[$avisoID] = $aviso;
                 }
             }
-            dd($tutor->avisos);
+            dd($usuarioID);
             //return view('lista_avisos', ['avisos' => $lista_avisos]);
         }
 
