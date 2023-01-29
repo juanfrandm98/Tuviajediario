@@ -196,9 +196,12 @@ class UsuarioController extends Controller
                         $nombres_avisos[$aviso->id] = $jugador->nombre;
                         $avisos[$aviso->id] = $aviso->id;
                     }
-            }
 
-            return view('mainmenu', ['nombres_avisos' => $nombres_avisos, 'avisos' => $avisos]);
+                    if(count($nombres_avisos) > 1)
+                        $nombres_avisos = array_unique($nombres_avisos);
+            }
+            dd($avisos);
+            //return view('mainmenu', ['nombres_avisos' => $nombres_avisos, 'avisos' => $avisos]);
         }
 
         return redirect()->route('login');
