@@ -35,7 +35,7 @@
 
                             @if(session('usuarioRolID') == 1 || session('usuarioRolID') == 3)
                                 <td>
-                                    <form method="get" action="{{route('editar_juego')}}">
+                                    <form method="get" action="{{route('cambiar_aviso_resultado')}}">
                                         <input type="hidden" id="resultado_fecha" name="resultado_fecha" value="{{$resultado->fecha}}">
                                         <input type="hidden" id="resultado_jugador_id" name="resultado_jugador_id" value="{{$resultado->jugadorID}}">
                                         <input type="hidden" id="resultado_id" name="resultado_id" value="{{$resultado->id}}">

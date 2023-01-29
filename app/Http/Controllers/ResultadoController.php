@@ -46,6 +46,22 @@ class ResultadoController extends Controller
         return response($message, $statusCode)->header('Content-Type', 'text/plain');
     }
 
+    public function cambiarAvisoResultado(Request $request) {
+        $resultadoID = $request->get('resultado_id');
+        $resultado = Resultado::find($resultadoID);
+
+        if($resultado) {
+            $nuevo_estado_aviso = !$resultado->aviso;
+
+            $resultado->aviso = $nuevo_estado_aviso;
+            $resultado->save();
+
+            //if($nuevo_estado_aviso)
+        }
+
+        return $this->goToListaResultados($request);
+    }
+
     public function goToListaResultados(Request $request) {
         $usuarioID = session('usuarioID');
 

@@ -52,6 +52,7 @@ Route::get('getAudioCampanada', [JuegoController::class, 'getAudioCampanada']);
  * Rutas para los Resultados
  */
 Route::get('addResultado', [ResultadoController::class, 'addResultado']);
+Route::get('cambiarAvisoResultado', [ResultadoController::class, 'cambiarAvisoResultado'])->name('cambiar_aviso_resultado');
 /**
  * Rutas para los Destinos
  */
