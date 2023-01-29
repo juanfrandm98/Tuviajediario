@@ -32,7 +32,7 @@ class AvisoController extends Controller
             $jugador = Usuario::find($resultado->jugadorID);
             $avisoID = Array($aviso->id);
 
-            foreach ($jugador->tutor as $tutor) {
+            foreach ($jugador->tutela as $tutor) {
                 if(is_null($tutor->avisos)) {
                     $tutor->avisos = $avisoID;
                 } else {
