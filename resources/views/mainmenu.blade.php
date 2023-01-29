@@ -6,6 +6,29 @@
     <div id="menu_principal">
         <h2>Menú Principal</h2>
 
+        @if(isset($avisos))
+            <div id="aviso_deterioro">
+                <h3>¡Nuevo aviso de posible deterioro cognitivo!</h3>
+
+                @if(count($avisos) > 1)
+                    <p>Los siguientes usuarios tienen nuevos avisos de posible deterioro cognitivo:</p>
+                @else
+                    <p>El siguiente usuario tiene un nuevo aviso de posible deterioro cognitivo:</p>
+                @endif
+
+                <ul>
+                    @foreach($nombres_avisos as $nombre)
+                        <li>{{$nombre}}</li>
+                    @endforeach
+                </ul>
+
+                <form method="get" action="{{route('editar_juego')}}">
+                    <input type="hidden" id="avisos" name="avisos" value={{$avisos}}>
+                    <button type="submit">He leído esta advertencia</button>
+                </form>
+            </div>
+        @endif
+
         <div id="opciones_menu_principal">
             <a href="{{route('lista_resultados')}}">Resultados de los tutelados</a>
 

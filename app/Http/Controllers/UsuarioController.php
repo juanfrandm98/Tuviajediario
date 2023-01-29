@@ -180,8 +180,25 @@ class UsuarioController extends Controller
     public function goToMainmenu() {
         $usuarioID = session('usuarioID');
 
-        if(isset($usuarioID)) return view('mainmenu');
-        else return redirect()->route('login');
+        if(isset($usuarioID)) {
+            $usuario = Usuario::find($usuarioID);
+
+            $nombres_avisos = [];
+            $avisos = [];
+
+            if(isset($usuario->avisos)) {
+                foreach ($usuario->avisos as $aviso)
+                    if($aviso->activo && !$aviso->leido) {
+                        $jugador = Usuario::find($aviso->jugadorID);
+                        $nombres_avisos[$aviso->id] = [$jugador->nombre];
+                        $avisos[$aviso->id] = $aviso->id;
+                    }
+            }
+
+            return view('mainmenu', ['nombres_avisos' => $nombres_avisos, 'avisos' => $avisos]);
+        }
+
+        return redirect()->route('login');
     }
 
     public function goToRegistrarOtroUsuario() {
