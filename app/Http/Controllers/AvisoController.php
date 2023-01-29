@@ -78,8 +78,8 @@ class AvisoController extends Controller
                     foreach ($lista_avisos as $aviso)
                         foreach ($aviso->areas_cognitivas as $areaID) {
                             if(isset($nombre_areas[$aviso->id])) {
-                                $oldArray = $nombre_areas[$avisoID];
-                                $nombre_areas[$avisoID] = array_merge($oldArray, [$areas[$areaID]->nombre]);
+                                $oldArray = $nombre_areas[$aviso->id];
+                                $nombre_areas[$aviso->id] = array_merge($oldArray, [$areas[$areaID]->nombre]);
                             } else {
                                 $nombre_areas[$aviso->id] = [$areas[$areaID]->nombre];
                             }
