@@ -20,8 +20,10 @@
 
                     @foreach($avisos as $aviso)
                         <tr>
-                            <td>{{$aviso->jugadorID}}</td>
-                            <td>{{implode(', ', $aviso->areas_cognitivas)}}</td>
+                            <td>{{$jugadores[$aviso->jugadorID]}}</td>
+                            <td>
+                                {{implode(', ', $areas[$aviso->id])}}
+                            </td>
                             <td>{{$aviso->fecha}}</td>
                             <td>
                                 @if($aviso->automatico)
