@@ -52,7 +52,7 @@ class AvisoController extends Controller
 
         if(isset($resultado) && isset($jugador)) {
             foreach ($jugador->tutela as $tutor) {
-                $tutor->update (['avisos' => [$jugador->id]]);
+                $tutor->avisos = json_encode([$jugador->id]);
                 $tutor->save();
             }
 
