@@ -50,19 +50,22 @@ class AvisoController extends Controller
         $resultado = Resultado::find($resultadoID);
         $jugador = Usuario::find($resultado->jugadorID);
 
+        if(isset($resultado) && isset($jugador)) {
+            foreach ($jugador->tutela as $tutor) {
+                if(isset($tutor->avisos)) {
+                    $oldArray = $tutor->avisos;
+                    $tutor->avisos = array_merge($oldArray, array($jugador->id));
+                } else {
+                    $tutor->avisos = array($jugador->id);
+                }
 
-        foreach ($jugador->tutela as $tutor) {
-            if(isset($tutor->avisos)) {
-                $oldArray = $tutor->avisos;
-                $tutor->avisos = array_merge($oldArray, array($jugador->id));
-            } else {
-                $tutor->avisos = array($jugador->id);
+                $tutor->save();
             }
 
-            $tutor->save();
+            return true;
         }
 
-        return true;
+        return false;
     }
 
     public function goToListaAvisos() {

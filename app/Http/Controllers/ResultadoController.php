@@ -62,9 +62,8 @@ class ResultadoController extends Controller
                 $aviso->save();
                 //$resultado->save();
             } else {
-                if(AvisoController::addAviso($resultadoID, false))
-                    //$resultado->save();
-                    dd('ok');
+                $resultado->aviso = AvisoController::addAviso($resultadoID, false);
+                $resultado->save();
             }
         }
 
