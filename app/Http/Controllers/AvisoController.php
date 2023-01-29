@@ -65,8 +65,8 @@ class AvisoController extends Controller
                         $lista_avisos[$avisoID] = $aviso;
                 }
             }
-
-            return view('lista_avisos', ['avisos' => $lista_avisos]);
+            dd($lista_avisos);
+            //return view('lista_avisos', ['avisos' => $lista_avisos]);
         }
 
         return redirect()->route('login');
