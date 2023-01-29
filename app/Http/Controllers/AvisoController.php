@@ -70,7 +70,7 @@ class AvisoController extends Controller
                 }
 
                 if(!empty($lista_avisos)) {
-                    $jugadores = Usuario::where('rolID', 4)->all();
+                    $jugadores = Usuario::where('rolID', 4)->get();
                     foreach ($jugadores as $jugador)
                         $nombre_jugadores[$jugador->id] = $jugador->nombre;
 
