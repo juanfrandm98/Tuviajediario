@@ -23,7 +23,7 @@
                 </ul>
 
                 <form method="get" action="{{route('editar_juego')}}">
-                    <input type="hidden" id="avisos" name="avisos" value={{$avisos}}>
+                    <input type="hidden" id="avisos" name="avisos" value={{json_encode($avisos)}}>
                     <button type="submit">He leído esta advertencia</button>
                 </form>
             </div>
