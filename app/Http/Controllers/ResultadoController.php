@@ -60,10 +60,11 @@ class ResultadoController extends Controller
             if($aviso = Aviso::where('resultadoID', $resultadoID)->first()) {
                 $aviso->activo = !$aviso->activo;
                 $aviso->save();
-                $resultado->save();
+                //$resultado->save();
             } else {
                 if(AvisoController::addAviso($resultadoID, false))
-                    $resultado->save();
+                    //$resultado->save();
+                    dd('ok');
             }
         }
 
