@@ -22,7 +22,7 @@
                     @endforeach
                 </ul>
 
-                <form method="get" action="{{route('editar_juego')}}">
+                <form method="get" action="{{route('leer_avisos')}}">
                     <input type="hidden" id="avisos" name="avisos" value={{json_encode($avisos)}}>
                     <button type="submit">He leído esta advertencia</button>
                 </form>

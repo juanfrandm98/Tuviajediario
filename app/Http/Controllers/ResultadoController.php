@@ -34,6 +34,15 @@ class ResultadoController extends Controller
 
                 if($resultado = Resultado::where('juegoID', $juego->id)->where('jugadorID', $jsonResult['jugadorID'])->
                                            where('fecha', $jsonResult['fecha'])->first()) {
+                    $juego = Juego::find($resultado->juegoID);
+                    $resultadosJuegoJugador = Resultado::where('jugadorID', $resultado->jugadorID)->where('juegoID',$resultado->juegoID);
+
+                    if(count($resultadosJuegoJugador) > 5 && $resultado->puntos < $juego->cota_inferior) {
+                        $juego->aviso = true;
+                        if(AvisoController::addAviso($resultado->id, true))
+                            $juego->save();
+                    }
+
                     $message = 'Resultado introducido correctamente (ID: ' . $resultado->id . ').';
                     $statusCode = 200;
                 } else {

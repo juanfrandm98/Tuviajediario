@@ -52,6 +52,20 @@ class AvisoController extends Controller
 
     }
 
+    public function marcarAvisosLeidos($request) {
+        $avisos = $request->get('avisos');
+
+        if(isset($avisos)) {
+            foreach ($avisos as $avisoID) {
+                $aviso = Aviso::find($avisoID);
+                $aviso->leido = true;
+                $aviso->save();
+            }
+        }
+
+        return redirect()->route('mainmenu');
+    }
+
     public function goToListaAvisos() {
         $usuarioID = session('usuarioID');
 

@@ -76,6 +76,10 @@ Route::get('cerrarSesion', [UsuarioController::class, 'cerrarSesion'])->name('ce
  */
 Route::get('addRol', [RolController::class, 'addRol']);
 /**
+ * Rutas para los Avisos
+ */
+Route::get('marcarAvisosLeidos', [AvisoController::class, 'marcarAvisosLeidos'])->name('leer_avisos');
+/**
  * Ruta de PHP
  */
 Route::get('phpmyinfo', function () {
