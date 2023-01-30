@@ -6,7 +6,7 @@
     <div id="menu_principal">
         <h2>Menú Principal</h2>
 
-        @if(isset($avisos))
+        @if(!empty($avisos))
             <div id="aviso_deterioro">
                 <h3>¡Nuevo aviso de posible deterioro cognitivo!</h3>
 
