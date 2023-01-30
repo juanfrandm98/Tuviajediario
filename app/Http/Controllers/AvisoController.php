@@ -54,7 +54,7 @@ class AvisoController extends Controller
     }
 
     public function marcarAvisosLeidos(Request $request) {
-        $avisos = $request->get('avisos');
+        $avisos = json_decode($request->get('avisos'), true);
 
         if(isset($avisos)) {
             foreach ($avisos as $avisoID) {
