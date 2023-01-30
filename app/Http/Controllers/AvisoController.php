@@ -7,6 +7,7 @@ use App\Models\Aviso;
 use App\Models\Juego;
 use App\Models\Resultado;
 use App\Models\Usuario;
+use Illuminate\Http\Request;
 
 class AvisoController extends Controller
 {
@@ -52,7 +53,7 @@ class AvisoController extends Controller
 
     }
 
-    public function marcarAvisosLeidos($request) {
+    public function marcarAvisosLeidos(Request $request) {
         $avisos = $request->get('avisos');
 
         if(isset($avisos)) {
