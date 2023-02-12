@@ -85,3 +85,9 @@ Route::get('marcarAvisosLeidos', [AvisoController::class, 'marcarAvisosLeidos'])
 Route::get('phpmyinfo', function () {
     phpinfo(); 
 })->name('phpmyinfo');
+/**
+ * Resumen del proyecto
+ */
+Route::get('resumen', function () {
+    return view('resumen');
+});
