@@ -89,11 +89,13 @@ if(typeof(UNICMS)=== "undefined"){var UNICMS={}};
 	            	<div class="content_doku">
 	            		<h2>Título del Proyecto</h2>
 	            		<ul>
-	            			<li class="level1"><div class="li"><strong>Autor:</strong> Nombre Apellidos</div></li>
-	            			<li class="level1"><div class="li"><strong>Tutor/es:</strong> NombreT ApellidosT</div></li>
-	            			<li class="level1"><div class="li"><strong>Fecha de Lectura:</strong> dd/mm/yyyy</div></li>
-	            			<li class="level1"><div class="li"><strong>Resumen: </strong> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque, arcu sit amet pharetra molestie, sem velit interdum metus, sed egestas mi orci laoreet ligula. Quisque non rhoncus dui, accumsan fringilla purus. Integer pharetra dapibus malesuada. Vivamus elementum neque leo, quis tincidunt est sollicitudin in. Vivamus interdum non arcu in imperdiet. Phasellus condimentum, leo eu euismod euismod, nibh erat congue ipsum, ac scelerisque nisi urna eget risus. Quisque eget consectetur nisl. Fusce nisl mi, ultrices a dolor sit amet, volutpat euismod libero. Praesent faucibus dapibus imperdiet. Vivamus bibendum tortor non libero faucibus, nec tincidunt sem rhoncus.</p></div></li>
-	            			<li class="level1"><div class="li"><strong>Imagen:</strong> <p><img src="http://ofiweb.ugr.es/img/general/cabecera-logo_ugr.png" alt="Imagen" /></p></div></li>
+	            			<li class="level1"><div class="li"><strong>Autor:</strong> Juan Francisco Díaz Moreno </div></li>
+	            			<li class="level1"><div class="li"><strong>Tutor/es:</strong> Francisco Luis Gutiérrez Vela y Patricia Paderewski Rodríguez </div></li>
+	            			<li class="level1"><div class="li"><strong>Fecha de Lectura:</strong> 16/02/2023 </div></li>
+	            			<li class="level1"><div class="li"><strong>Resumen: </strong> <p>Cada vez es más importante el uso de los asistentes virtuales en los entornos domésticos. Una de las actividades en las que podrían participar de forma interesante y productiva es en la reducción de la soledad en personas mayores. Por ejemplo, incluir pequeños juegos usando asistentes virtuales, mezclados con actividades de la vida diaria de un mayor, permitiría, además de aumentar la actividad de la persona, llevar un control de su deterioro cognitivo, y de esta forma poder detectar cuándo se debe actuar para reducir ese importante problema.
+
+										El objetivo del proyecto es estudiar qué técnicas se usan para analizar los inicios del deterioro cognitivo en mayores y diseñar un conjunto de pequeños juegos que puedan ser integrados en un sistema de juego basado en asistentes virtuales. El sistema deberá proporcionar juegos a la persona de forma dinámica a la vez que mantiene información sobre su utilización informando a un cuidador o familiar sobre la evolución de la persona.</p></div></li>
+	            			<li class="level1"><div class="li"><strong>Imagen:</strong> <p><img src="/resources/images/logo_tu_viaje_diario.png" alt="Logo de Mi Viaje Diario" /></p></div></li>
 	            		</ul>
 
 	            	</div>
