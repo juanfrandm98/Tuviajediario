@@ -87,7 +87,7 @@ if(typeof(UNICMS)=== "undefined"){var UNICMS={}};
 	            <div id="contenido" class="sec_interior">
 	            	<div id="fondo-dialog" style="display: none;"></div>
 	            	<div class="content_doku">
-	            		<h2>Título del Proyecto</h2>
+	            		<h2>Sistemas de evaluación del deterioro cognitivo de personas mayores usando dispositivos de tipo asistente virtual</h2>
 	            		<ul>
 	            			<li class="level1"><div class="li"><strong>Autor:</strong> Juan Francisco Díaz Moreno </div></li>
 	            			<li class="level1"><div class="li"><strong>Tutor/es:</strong> Francisco Luis Gutiérrez Vela y Patricia Paderewski Rodríguez </div></li>
