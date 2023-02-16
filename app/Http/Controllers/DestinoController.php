@@ -103,7 +103,7 @@ class DestinoController extends Controller
          */
         $statusCode = 200;
 
-        $destino = Destino::inRandomOrder()->first();
+        $destino = Destino::whereNotNull('datos_interes')->inRandomOrder()->first();
 
         return response()->json([
             'nombre' => $destino->nombre,

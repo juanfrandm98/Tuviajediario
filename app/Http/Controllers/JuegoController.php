@@ -79,7 +79,6 @@ class JuegoController extends Controller
         $tipoJuego = $request->get('tipo');
 
         if($tipoJuego) {
-            //$juego = Juego::inRandomOrder()->where('tipo', $tipoJuego)->first();
             $juego = Juego::inRandomOrder()->whereNotIn('id', [1,4])->where('tipo', $tipoJuego)->first();
 
             if($juego) {
